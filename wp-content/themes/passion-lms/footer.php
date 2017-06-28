@@ -13,19 +13,11 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'passion-lms' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'passion-lms' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'passion-lms' ), 'passion-lms', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="background-lightgray">
+		<div class="container text-center">
+			<h1>Footer to be replaced by Passion Footer</h1>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
