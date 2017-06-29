@@ -33,20 +33,20 @@
             </div>
 
             <!-- Modal -->
-            <div id="modal_<?php echo $modal_id; ?>" class="modal fade" role="dialog">
+            <div id="modal_<?php echo $modal_id; ?>" class="modal fade bs-override" role="dialog">
               <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                  </div>
                   <div class="modal-body">
-                    <p><?php echo $description; ?></p>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="embed-responsive">
+                      <iframe src="https://www.youtube.com/embed/u3B6ONLOoFo?rel=0" style="pointer-events: auto;"></iframe>
+                    </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <h3><?php echo $title; ?></h3>
+                    <?php echo $description; ?>
                   </div>
                 </div>
 

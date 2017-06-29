@@ -31,3 +31,46 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* modal bootstrap override */
+.bs-override .close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-weight: 100;
+  color: white;
+  opacity: 1.0;
+  font-size: 28px;
+}
+
+.bs-override .modal-dialog {
+  margin-top: 10%;
+}
+
+.bs-override .modal-footer {
+  text-align: left;
+}
+
+.bs-override .modal-body {
+  padding: 0;
+}
+
+.bs-override .modal-content {
+  padding: 0;
+  border: none;
+}
+
+.bs-override .modal-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* modal video */
+.embed-responsive iframe {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
