@@ -1,12 +1,16 @@
 <?php
- if ( get_row_layout() == 'grid_section' ):
+  if ( get_row_layout() == 'grid_section' ):
 
-   include('grid_section.php');
+    include('grid_section.php');
 
- elseif ( get_row_layout() == 'header' ):
+  elseif ( get_row_layout() == 'announcements' ):
 
-   include('header.php');
+    include('announcements.php');
 
- endif;
+  elseif( get_row_layout() == 'blog_section' );
+
+    include('blog_section.php');
+
+  endif;
 
  ?>

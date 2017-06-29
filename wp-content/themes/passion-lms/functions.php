@@ -102,6 +102,59 @@ function passion_lms_widgets_init() {
 add_action( 'widgets_init', 'passion_lms_widgets_init' );
 
 /**
+ * Create Custom Post Types
+ */
+	function custom_post_announcements() {
+		 $labels = array(
+			 'name' 					=> _x( 'Announcements', 'post type general name' ),
+			 'singular_name' => _x( 'Announcement', 'post type singular name' ),
+			 'add_new' 			=> _x( 'Add New', 'book'),
+			 'add_new_item'	=> __( 'Add New Announcement' ),
+			 'edit_item'			=> __( 'Edit Announcement' ),
+			 'new_item'			=> __( 'New Announcement' ),
+			 'all_items'			=> __( 'All Announcements' ),
+			 'view_item'			=> __( 'View Announcement' ),
+			 'search_items'	=> __( 'Search Announcements' ),
+			 'menu_name'			=> 'Announcements'
+		 );
+		 $args = array (
+			 'labels'			=> $labels,
+			 'description'	=> 'Announcements',
+			 'public'			=> true,
+			 'menu_position' => 5,
+			 'supports'		=> array ('title', 'page-attributes' ),
+			 'has_archive' => true
+		 );
+	 register_post_type( 'announcements', $args );
+	}
+	add_action( 'init', 'custom_post_announcements' );
+
+	function custom_post_production_blog() {
+		 $labels = array(
+			 'name' 					=> _x( 'Production Blog', 'post type general name' ),
+			 'singular_name' => _x( 'Production Blog Post', 'post type singular name' ),
+			 'add_new' 			=> _x( 'Add New', 'book'),
+			 'add_new_item'	=> __( 'Add New Blog Post' ),
+			 'edit_item'			=> __( 'Edit Blog Post' ),
+			 'new_item'			=> __( 'New Blog Post' ),
+			 'all_items'			=> __( 'All Production Blog Posts' ),
+			 'view_item'			=> __( 'View Blog Post' ),
+			 'search_items'	=> __( 'Search Production Blog Posts' ),
+			 'menu_name'			=> 'Production Blog'
+		 );
+		 $args = array (
+			 'labels'			=> $labels,
+			 'description'	=> 'Blog Posts for Production Volunteers',
+			 'public'			=> true,
+			 'menu_position' => 5,
+			 'supports'		=> array ('title', 'page-attributes' ),
+			 'has_archive' => true
+		 );
+	 register_post_type( 'production_blog', $args );
+	}
+	add_action( 'init', 'custom_post_production_blog' );
+
+/**
  * Enqueue scripts and styles.
  */
 function passion_lms_scripts() {
