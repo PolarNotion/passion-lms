@@ -1,7 +1,7 @@
 <?php
- if ( get_row_layout() == 'call-to-action' ):
+ if ( get_row_layout() == 'grid_section' ):
 
-   include('call-to-action.php');
+   include('grid_section.php');
 
  elseif ( get_row_layout() == 'header' ):
 
