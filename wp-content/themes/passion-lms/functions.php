@@ -132,23 +132,24 @@ add_action( 'widgets_init', 'passion_lms_widgets_init' );
 	function custom_post_production_blog() {
 		 $labels = array(
 			 'name' 					=> _x( 'Production Blog', 'post type general name' ),
-			 'singular_name' => _x( 'Production Blog Post', 'post type singular name' ),
-			 'add_new' 			=> _x( 'Add New', 'book'),
-			 'add_new_item'	=> __( 'Add New Blog Post' ),
+			 'singular_name' 	=> _x( 'Production Blog Post', 'post type singular name' ),
+			 'add_new' 				=> _x( 'Add New', 'book'),
+			 'add_new_item'		=> __( 'Add New Blog Post' ),
 			 'edit_item'			=> __( 'Edit Blog Post' ),
-			 'new_item'			=> __( 'New Blog Post' ),
+			 'new_item'				=> __( 'New Blog Post' ),
 			 'all_items'			=> __( 'All Production Blog Posts' ),
 			 'view_item'			=> __( 'View Blog Post' ),
-			 'search_items'	=> __( 'Search Production Blog Posts' ),
+			 'search_items'		=> __( 'Search Production Blog Posts' ),
 			 'menu_name'			=> 'Production Blog'
 		 );
 		 $args = array (
-			 'labels'			=> $labels,
+			 'labels'				=> $labels,
 			 'description'	=> 'Blog Posts for Production Volunteers',
-			 'public'			=> true,
+			 'public'				=> true,
 			 'menu_position' => 5,
-			 'supports'		=> array ('title', 'page-attributes' ),
-			 'has_archive' => true
+			 'supports'			=> array ('title', 'page-attributes' ),
+			 'has_archive' 	=> true,
+			 'taxonomies' 	=> array( 'category' ),
 		 );
 	 register_post_type( 'production_blog', $args );
 	}
