@@ -27,7 +27,7 @@
           <?php else: ?>
             <?php echo wp_html_excerpt($blog_body, 200, '...'); ?>
           <?php endif; ?>
-          <a href="#">Read More</a>
+          <a href="<?php the_permalink(); ?>">Read More</a>
         </div>
       </div>
       <br>
