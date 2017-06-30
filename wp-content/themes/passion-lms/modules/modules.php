@@ -7,7 +7,7 @@
 
     include('announcements.php');
 
-  elseif( get_row_layout() == 'blog_section' );
+  elseif ( get_row_layout() == 'blog_section' ):
 
     include('blog_section.php');
 

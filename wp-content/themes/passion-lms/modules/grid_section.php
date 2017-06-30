@@ -4,10 +4,10 @@
   $row_id  = get_row_index();
 ?>
 
-<section class="text-center pad">
+<section class="pad">
   <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class="text-center"><?php echo $title; ?></h2>
+			<h2 class=""><?php echo $title; ?></h2>
 		<?php endif; ?>
     <div class="row">
 			<?php if(get_sub_field('content_items')): ?>
