@@ -9,7 +9,7 @@
     <?php
     $num_blogs = 0;
     while ( $loop->have_posts() ) : $loop->the_post();
-      $title          = get_field('blog_title');
+      $title          = the_title();
       $featured_image = get_field('featured_image');
       $blog_body      = get_field('blog_body');
       $num_blogs += 1;
