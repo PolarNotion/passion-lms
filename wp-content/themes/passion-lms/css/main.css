@@ -4,6 +4,14 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    text-align: center;
+}
+
+/* Header Styles */
+.title-image {
+  max-width: 800px;
+  margin-left: auto;
+  margin-righ: auto;
 }
 
 /*.background-cover {
