@@ -22,6 +22,8 @@ $title_image = get_field('title_image');
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/bootstrap.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/main.css">
+<!-- Font Awesome, added from bootstrap cdn -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <title><?php echo $page_title; ?></title>
 <?php wp_head(); ?>
