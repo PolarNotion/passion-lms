@@ -40,7 +40,7 @@ $title_image = get_field('title_image');
 				</div>
 				<a href="#scroll_prompt_anchor">
 					<div id="scroll_prompt" class="animated bounce">
-						<img src="https://passioncitychurch.com/wp-content/themes/passioncitychurch/img/down-arrow.png">
+						<img src="<?php echo get_template_directory_uri();?>/img/down-arrow.png">
 					</div>
 				</a>
 			</header>
