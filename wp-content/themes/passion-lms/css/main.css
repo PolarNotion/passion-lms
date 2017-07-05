@@ -7,21 +7,6 @@
     text-align: center;
 }
 
-/* Header Styles */
-.title-image {
-  max-width: 800px;
-  margin-left: auto;
-  margin-righ: auto;
-}
-
-/*.background-cover {
-    background-size: cover;
-}
-
-.background-center {
-    background-position: center center;
-}*/
-
 .fixedratio {
   padding-top: 75%; /* ensures 16/9 ratio */
   background-size: cover;

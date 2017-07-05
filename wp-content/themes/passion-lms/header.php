@@ -34,9 +34,11 @@ $title_image = get_field('title_image');
 <div id="page" class="site">
 	<div id="content" class="site-content">
 		<div style="background: url('<?php echo $header_bg_image; ?>') center center fixed; background-size: cover;">
-			<header class="vertical-child">
+			<header class="vertical-child pad">
 				<div class="container">
-					<img class="title-image" src="<?php echo $title_image; ?>">
+					<div class="img-lg">
+						<img src="<?php echo $title_image; ?>">
+					</div>
 				</div>
 				<a href="#scroll_prompt_anchor">
 					<div id="scroll_prompt" class="animated bounce">
