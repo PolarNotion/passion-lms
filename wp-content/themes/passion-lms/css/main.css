@@ -88,3 +88,54 @@ p:last-child {
   padding: 10px;
   min-height: 91px;
 }
+
+/* Content List Module */
+.content-list-module-wrapper {
+  background-color: gray;
+}
+
+.content-list-wrapper {
+  width: 33%;
+  float: left;
+}
+
+.content-pane-wrapper {
+  width: 67%;
+  float: left;
+  background-color: lightgray;
+}
+
+.content-pane-wrapper.full-width {
+  width: 100%;
+}
+
+.content-description {
+  padding: 0 20px 10px;
+}
+
+ul.content-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.content-trigger {
+  background-color: lightgray;
+  border-bottom: solid 1px gray;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+
+ul.content-trigger > li {
+  float: left;
+  position: relative;
+  display: block;
+}
+
+ul.content-trigger > li.title {
+  padding: 10px;
+  font-weight: 900;
+}

@@ -4,16 +4,49 @@
   $row_id  = get_row_index();
 ?>
 
-<section class="pad">
-  <div class="container">
+<section class="">
+  <div class="container pad">
 		<?php if($title != ''): ?>
 			<h2 class=""><?php echo $title; ?></h2>
+      <a id="video-bigger" class="btn btn-primary">Make Video Bigger</a>
+      <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
-    <div class="row">
 			<?php if(get_sub_field('content_items')): ?>
+        <div class="content-list-wrapper">
+          <ul class="content-list">
+          <?php
+            $item_no = 0;
+            while(the_repeater_field('content_items')):
+            	$title       = get_sub_field('title');
+  					  $image       = get_sub_field('image');
+              $item_no += 1;
+              $active_class = '';
+              if($item_no == 1) {
+                $active_class = 'active';
+              }
+            ?>
+              <li class="<?php echo $active_class; ?>">
+                <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
+                  <ul class="content-trigger">
+                    <li>
+                      <img src="<?php echo $image; ?>" style="width: 75px;">
+                    </li>
+                    <li class="title">
+                      <?php echo $title; ?>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+  				<?php endwhile; ?>
+          </ul>
+        </div>
+      <?php endif; ?>
 
-        <ul class="nav nav-tabs">
-        <?php
+      <!-- The Tab Content -->
+      <?php if(get_sub_field('content_items')): ?>
+
+        <div class="content-pane-wrapper tab-content">
+          <?php
           $item_no = 0;
           while(the_repeater_field('content_items')):
           	$title       = get_sub_field('title');
@@ -27,36 +60,14 @@
               $active_class = 'active';
             }
           ?>
-            <li class="<?php echo $active_class; ?>">
-              <a data-toggle="tab" href="#item_<?php echo $item_no; ?>">
-                <?php echo $title; ?>
-              </a>
-            </li>
-				<?php endwhile; ?>
-        </ul>
-      <?php endif; ?>
-
-      <!-- The Tab Content -->
-      <?php if(get_sub_field('content_items')): ?>
-
-        <div class="tab-content">
-        <?php
-          $item_no = 0;
-          while(the_repeater_field('content_items')):
-          	$title       = get_sub_field('title');
-					  $image       = get_sub_field('image');
-						$description = get_sub_field('description');
-					  $video_file  = get_sub_field('video_file');
-					  $other_file  = get_sub_field('other_file');
-            $item_no += 1;
-            $active_class = '';
-            if($item_no == 1) {
-              $active_class = 'in active';
-            }
-          ?>
-            <div id="item_<?php echo $item_no; ?>" class="tab-pane fade <?php echo $active_class; ?>">
-              <img src="<?php echo $image; ?>">
-              <?php echo $description; ?>
+            <div id="item_<?php echo $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
+              <?php if($video_file != ''): ?>
+                <iframe width="623.09" height="350.48" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&showinfo=0&modestbranding=0&color=white" frameborder="0" allowfullscreen></iframe>
+              <?php endif; ?>
+              <div class="content-description">
+                <h4><?php echo $title; ?></h4>
+                <?php echo $description; ?>
+              </div>
             </div>
 				<?php endwhile; ?>
       </div><!-- end tab-content -->
