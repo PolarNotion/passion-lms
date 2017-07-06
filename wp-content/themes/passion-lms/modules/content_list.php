@@ -19,17 +19,40 @@
             while(the_repeater_field('content_items')):
             	$title       = get_sub_field('title');
   					  $image       = get_sub_field('image');
+              $video_file  = get_sub_field('video_file');
+              $other_file  = get_sub_field('other_file');
+
               $item_no += 1;
               $active_class = '';
+              $file_icon = get_template_directory_uri() . "/img/blank-icon.png";
+
               if($item_no == 1) {
                 $active_class = 'active';
+              }
+              if($video_file != '') {
+                $file_icon = get_template_directory_uri() . "/img/play.svg";
+              }
+              if($other_file != '') {
+                $file_parts = pathinfo($other_file);
+
+                switch($file_parts['extension']) {
+                  case "pdf":
+                  $file_icon = get_template_directory_uri() . "/img/pdf.svg";
+                  break;
+
+                  default:
+                  $file_icon = get_template_directory_uri() . "/img/blank-icon.png";
+                }
               }
             ?>
               <li class="<?php echo $active_class; ?>">
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
                   <ul class="content-trigger">
                     <li>
-                      <img src="<?php echo $image; ?>" style="width: 75px;">
+                      <div class="content-thumbnail">
+                        <img src="<?php echo $image; ?>" style="width: 75px;">
+                        <img class="file-icon" src="<?php echo $file_icon; ?>">
+                      </div>
                     </li>
                     <li class="title">
                       <?php echo $title; ?>

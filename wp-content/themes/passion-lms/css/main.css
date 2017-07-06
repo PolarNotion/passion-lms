@@ -139,3 +139,7 @@ ul.content-trigger > li.title {
   padding: 10px;
   font-weight: 900;
 }
+
+.content-thumbnail {
+  position: relative;
+}
