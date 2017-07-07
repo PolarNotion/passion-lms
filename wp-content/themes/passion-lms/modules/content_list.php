@@ -47,7 +47,7 @@
             ?>
               <li class="<?php echo $active_class; ?>">
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
-                  <ul class="content-trigger">
+                  <ul class="block-line content-trigger">
                     <li>
                       <div class="content-thumbnail">
                         <img src="<?php echo $image; ?>" style="width: 75px;">

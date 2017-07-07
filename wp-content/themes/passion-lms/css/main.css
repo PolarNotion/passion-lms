@@ -29,6 +29,20 @@
   margin-top: 30px;
 }
 
+ul.block-line {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+
+ul.block-line > li {
+  float: left;
+  position: relative;
+  display: block;
+}
+
 /* announcement styles */
 .announcement {
   padding: 20px;
@@ -38,6 +52,19 @@
 
 .announcement h3 {
   margin-top: 0;
+}
+
+/* blog module styles */
+.blog h2 {
+  margin-bottom: 30px;
+}
+
+ul.blog-post {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  float: left;
+  width: 100%;
 }
 
 /* modal bootstrap override */
@@ -86,13 +113,15 @@ p:last-child {
 /* blog styles */
 
 .blog-image-first {
-  width: 22.5%;
+  width: 20vw;
   margin-right: 20px;
+  float: left;
 }
 
 .blog-image {
-  width: 13%;
+  width: 10vw;
   margin-right: 20px;
+  float: left;
 }
 
 .blog-post {
@@ -102,6 +131,8 @@ p:last-child {
 .blog-teaser {
   padding: 10px;
   min-height: 91px;
+  float: left;
+  min-resolution: 80vw;
 }
 
 /* Content List Module */
@@ -137,17 +168,6 @@ ul.content-list {
 ul.content-trigger {
   background-color: lightgray;
   border-bottom: solid 1px gray;
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  float: left;
-  width: 100%;
-}
-
-ul.content-trigger > li {
-  float: left;
-  position: relative;
-  display: block;
 }
 
 ul.content-trigger > li.title {
