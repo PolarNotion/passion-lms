@@ -44,8 +44,8 @@
                 <div class="modal-content">
                   <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <div class="embed-responsive">
-                      <iframe src="https://www.youtube.com/embed/u3B6ONLOoFo?rel=0" style="pointer-events: auto;"></iframe>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wAg5lvKvamA?rel=0"></iframe>
                     </div>
                   </div>
                   <div class="modal-footer">

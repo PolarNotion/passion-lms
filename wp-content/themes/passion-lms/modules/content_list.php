@@ -85,7 +85,9 @@
           ?>
             <div id="item_<?php echo $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
               <?php if($video_file != ''): ?>
-                <iframe width="623.09" height="350.48" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&showinfo=0&modestbranding=0&color=white" frameborder="0" allowfullscreen></iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&showinfo=0&modestbranding=0&color=white" frameborder="0" allowfullscreen></iframe>
+                </div>
               <?php endif; ?>
               <div class="content-description">
                 <h4><?php echo $title; ?></h4>
