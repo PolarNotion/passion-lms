@@ -22,27 +22,17 @@
               $video_file  = get_sub_field('video_file');
               $other_file  = get_sub_field('other_file');
 
+              // This include sets $file_icon to the right icon file
+  						$video_file = $video_file;
+  						$audio_file = $audio_file;
+  						$other_file = $other_file;
+  						$file_icon = '';
+  						include 'partials/file-icon.php';
+
               $item_no += 1;
               $active_class = '';
-              $file_icon = get_template_directory_uri() . "/img/blank-icon.png";
-
               if($item_no == 1) {
                 $active_class = 'active';
-              }
-              if($video_file != '') {
-                $file_icon = get_template_directory_uri() . "/img/play.svg";
-              }
-              if($other_file != '') {
-                $file_parts = pathinfo($other_file);
-
-                switch($file_parts['extension']) {
-                  case "pdf":
-                  $file_icon = get_template_directory_uri() . "/img/pdf.svg";
-                  break;
-
-                  default:
-                  $file_icon = get_template_directory_uri() . "/img/blank-icon.png";
-                }
               }
             ?>
               <li class="<?php echo $active_class; ?>">
@@ -84,11 +74,13 @@
             }
           ?>
             <div id="item_<?php echo $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
-              <?php if($video_file != ''): ?>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&showinfo=0&modestbranding=0&color=white" frameborder="0" allowfullscreen></iframe>
-                </div>
-              <?php endif; ?>
+              <?php
+                $video_file = $video_file;
+                $audio_file = $audio_file;
+                $other_file = $other_file;
+                $file_type	= $file_type; // set by partials/icon-file.php above
+                include 'partials/embed-content.php';
+              ?>
               <div class="content-description">
                 <h4><?php echo $title; ?></h4>
                 <?php echo $description; ?>

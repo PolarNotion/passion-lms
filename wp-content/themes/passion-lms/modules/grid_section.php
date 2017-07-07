@@ -23,14 +23,23 @@
 
           <div class="col-sm-3 js-height">
           <?php
-          	$title       = get_sub_field('title');
-					  $image       = get_sub_field('image');
-						$description = get_sub_field('description');
-					  $video_file  = get_sub_field('video_file');
-					  $other_file  = get_sub_field('other_file');
+          	$title       	= get_sub_field('title');
+					  $image       	= get_sub_field('image');
+						$description 	= get_sub_field('description');
+					  $video_file  	= get_sub_field('video_file');
+					  $other_file  	= get_sub_field('other_file');
+						$audio_file		= get_sub_field('audio_file');
+
+						// This include sets $file_icon to the right icon file, and $file_type for use later by partials/embed-content.php
+						$video_file = $video_file;
+						$audio_file = $audio_file;
+						$other_file = $other_file;
+						$file_icon = '';
+						$file_type = '';
+						include 'partials/file-icon.php';
           ?>
             <div class="vertical-child fixedratio position-relative" style="background-image: url('<?php echo $image; ?>');">
-              <a href="#" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>"><img class="file-icon" src="<?php echo get_template_directory_uri() . '/img/play.svg' ?>"></a>
+              <a href="#" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>"><img class="file-icon" src="<?php echo $file_icon ?>"></a>
             </div>
             <div>
               <?php echo $title; ?>
@@ -44,9 +53,13 @@
                 <div class="modal-content">
                   <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wAg5lvKvamA?rel=0"></iframe>
-                    </div>
+										<?php
+											$video_file = $video_file;
+											$audio_file = $audio_file;
+											$other_file = $other_file;
+											$file_type	= $file_type; // set by partials/icon-file.php above
+											include 'partials/embed-content.php';
+										?>
                   </div>
                   <div class="modal-footer">
                     <h3><?php echo $title; ?></h3>
