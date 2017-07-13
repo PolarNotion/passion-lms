@@ -204,3 +204,22 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom Polarn Notion Functions for use on Template Files
+ */
+
+// pn_user_has_access
+// Argument: $allowed_keys: the permission keys that are allowed for this thing
+ function pn_user_has_access ($allowed_permissions) {
+	 global $user_permissions; // The global array of this user's permissions
+	 $user_has_access = FALSE;
+
+	 foreach($user_permissions as $p) {
+		 if (in_array($p, $allowed_permissions)) {
+			 $user_has_access = TRUE;
+		 }
+	 }
+
+	 return $user_has_access;
+ }

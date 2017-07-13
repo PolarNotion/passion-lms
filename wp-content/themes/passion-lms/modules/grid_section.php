@@ -2,6 +2,10 @@
 	$title   = get_sub_field('title');
 	$access  = get_sub_field('access');
   $row_id  = get_row_index();
+
+	$permissions_list = explode(" ", $access);
+
+	if (pn_user_has_access($permissions_list)):
 ?>
 
 <section class="pad">
@@ -76,3 +80,4 @@
     </div>
   </div>
 </section>
+<?php endif; ?>

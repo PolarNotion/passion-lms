@@ -8,6 +8,9 @@
  *
  * @package Passion_LMS
  */
+global $user_permissions;
+$user_permissions[] = "819";
+$user_permissions[] = "123";
 
 $page_title = get_the_title();
 $header_bg_image = get_field('header_bg_image');
