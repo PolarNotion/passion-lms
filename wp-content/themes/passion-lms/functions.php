@@ -7,6 +7,13 @@
  * @package Passion_LMS
  */
 
+/**
+ * Setting up global user permissions
+ */
+
+ global $user_permissions;
+ $user_permissions = array("1", "11", "2", "3", "4", "5");
+
 if ( ! function_exists( 'passion_lms_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
