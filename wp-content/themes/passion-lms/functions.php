@@ -11,9 +11,6 @@
  * Setting up global user permissions
  */
 
- global $user_permissions;
- $user_permissions = array("1", "11", "2", "3", "4", "5");
-
 if ( ! function_exists( 'passion_lms_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -242,17 +239,23 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Polarn Notion Functions for use on Template Files
  */
 
+// Permissions Stuff...
+global $user_permissions;
+$user_permissions = array("101", "11", "202", "203", "4", "5");
+
 // pn_user_has_access
-// Argument: $allowed_keys: the permission keys that are allowed for this thing
- function pn_user_has_access ($allowed_permissions) {
-	 global $user_permissions; // The global array of this user's permissions
-	 $user_has_access = FALSE;
+// Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing
+// RETURN: True if this user has a permission key that is also on the $allowed_permissions list.
+function pn_user_has_access ($allowed_permissions) {
+ global $user_permissions; // The global array of this user's permissions
+ $user_has_access = FALSE;
+ $allowed_array   = explode(',', trim($allowed_permissions));
 
-	 foreach($user_permissions as $p) {
-		 if (in_array($p, $allowed_permissions)) {
-			 $user_has_access = TRUE;
-		 }
+ foreach($user_permissions as $p) {
+	 if (in_array($p, $allowed_array)) {
+		 $user_has_access = TRUE;
 	 }
-
-	 return $user_has_access;
  }
+
+ return $user_has_access;
+}

@@ -27,7 +27,7 @@
     <?php endwhile;
           wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
     ?>
-    </div>
+  </div>
     <a href="<?php echo get_post_type_archive_link( 'production_blog' ); ?>" class="btn btn-primary">Show More Blogs</a>
   </div>
 </section>

@@ -9,10 +9,9 @@
 $title 				= get_the_title();
 $description 	= get_field('team_description');
 $access_list 	= get_field('access_list');
-$permissions_list = explode(" ", $access_list);
 $team_id			= get_the_ID();
 
-if (pn_user_has_access($permissions_list)):
+if (pn_user_has_access($access_list)):
 
 get_header(); ?>
 
@@ -25,7 +24,7 @@ get_header(); ?>
 			echo "<br>";
 			echo $description;
 			echo "<br>";
-			echo $team_id;
+			print_r(strval($team_id));
 
 			// args
 			$args = array(
