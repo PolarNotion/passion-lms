@@ -213,6 +213,23 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Polarn Notion Functions for use on Template Files
  */
 
+ // Setting up the Session - used for Permissions and the Current Team ID
+add_action('init', 'start_session', 1);
+
+function start_session() {
+  if(!session_id()) {
+    session_start();
+  }
+}
+
+add_action(‘wp_logout’, ‘end_session’);
+add_action(‘wp_login’, ‘end_session’);
+add_action(‘end_session_action’, ‘end_session’);
+
+function end_session() {
+  session_destroy ();
+}
+
 // Permissions Stuff...
 global $user_permissions;
 $user_permissions = array("101", "11", "202", "203", "4", "5");

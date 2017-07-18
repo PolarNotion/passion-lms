@@ -11,6 +11,8 @@ $description 	= get_field('team_description');
 $access_list 	= get_field('access_list');
 $team_id			= get_the_ID();
 
+$_SESSION['current_team_id'] = $team_id;
+
 if (pn_user_has_access($access_list)):
 
 get_header(); ?>
@@ -25,6 +27,8 @@ get_header(); ?>
 			echo $description;
 			echo "<br>";
 			print_r(strval($team_id));
+			echo "<br>global team id:";
+			echo $_SESSION['current_team_id'];
 
 			// announcement args
 			$announcement_args = array(
@@ -38,8 +42,6 @@ get_header(); ?>
 					)
 				)
 			);
-
-			print_r($announcement_args);
 
 		  $announcement_loop = new WP_Query( $announcement_args );
 			?>
@@ -89,9 +91,8 @@ get_header(); ?>
 				<div class="row">
 				<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
 		      $featured_image = get_field('featured_image');
-					$view_access_list = get_field('view_access');
 		    ?>
-		      <div class="div">
+		      <div class="col-sm-4">
 		        <div class="blog-teaser">
 		          <?php if($featured_image != ''): ?>
 		              <div class="blog-image">
@@ -100,7 +101,6 @@ get_header(); ?>
 		          <?php endif; ?>
 		          <?php the_title(); ?>
 		          <?php the_excerpt(); ?>
-							<?php print_r($view_access_list); ?>
 		          <a href="<?php the_permalink(); ?>">Read More</a>
 		        </div>
 		      </div>
@@ -110,6 +110,10 @@ get_header(); ?>
 				?>
 				</div>
 			</div>
+
+		</div>
+			<a href="/blog-archive" class="btn btn-primary">Show More Blogs</a>
+		</div>
 
 
 		<?php	get_template_part( 'template-parts/content', 'page' ); ?>
