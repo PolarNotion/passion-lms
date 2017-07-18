@@ -26,8 +26,54 @@ get_header(); ?>
 			echo "<br>";
 			print_r(strval($team_id));
 
-			// args
-			$args = array(
+			// announcement args
+			$announcement_args = array(
+				'posts_per_page'	=> -1,
+				'post_type' => 'announcements',
+				'meta_query'	=> array(
+					array(
+							'key'		=> 'view_access',
+							'value'		=> serialize( strval($team_id) ),
+							'compare'	=> 'LIKE'
+					)
+				)
+			);
+
+			print_r($announcement_args);
+
+		  $announcement_loop = new WP_Query( $announcement_args );
+			?>
+			<section class="pad">
+				<?php
+				$item_no = 0;
+				while ( $announcement_loop->have_posts() ) : $announcement_loop->the_post();
+					$title = get_field('title');
+					$the_text = get_field('announcement_text');
+					$button_text = get_field('button_text');
+					$button_link = get_field('button_link');
+
+					$pad_top = '';
+					$item_no += 1;
+					if ($item_no > 1) {
+						$pad_top = 'pad-top';
+					}
+					?>
+					<div class="container">
+						<div class="announcement <?php echo $pad_top; ?>">
+							<h3><?php echo $title; ?> &nbsp;<i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></h3>
+							<?php echo $the_text; ?>
+							<?php if ($button_text != ''): ?>
+								<a href="<?php echo $button_link; ?>" class="btn btn-secondary-white btn-lg"><?php echo $button_text; ?></a>
+							<?php endif; ?>
+						</div>
+					</div>
+		    <?php endwhile;
+		          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+				?>
+				</section>
+
+			<?php // blog args
+			$blog_args = array(
 				'posts_per_page'	=> 3,
 				'meta_query'	=> array(
 					array(
@@ -37,33 +83,36 @@ get_header(); ?>
 					)
 				)
 			);
-		  $loop = new WP_Query( $args );
+		  $blog_loop = new WP_Query( $blog_args );
+			?>
+			<div class="container">
+				<div class="row">
+				<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
+		      $featured_image = get_field('featured_image');
+					$view_access_list = get_field('view_access');
+		    ?>
+		      <div class="div">
+		        <div class="blog-teaser">
+		          <?php if($featured_image != ''): ?>
+		              <div class="blog-image">
+		                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
+		              </div>
+		          <?php endif; ?>
+		          <?php the_title(); ?>
+		          <?php the_excerpt(); ?>
+							<?php print_r($view_access_list); ?>
+		          <a href="<?php the_permalink(); ?>">Read More</a>
+		        </div>
+		      </div>
 
-			while ( $loop->have_posts() ) : $loop->the_post();
-	      $featured_image = get_field('featured_image');
-				$view_access_list = get_field('view_access');
-	    ?>
-	      <div class="div">
-	        <div class="blog-teaser">
-	          <?php if($featured_image != ''): ?>
-	              <div class="blog-image">
-	                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
-	              </div>
-	          <?php endif; ?>
-	          <?php the_title(); ?>
-	          <?php the_excerpt(); ?>
-						<?php print_r($view_access_list); ?>
-	          <a href="<?php the_permalink(); ?>">Read More</a>
-	        </div>
-	      </div>
-
-	    <?php endwhile;
-	          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+		    <?php endwhile;
+		          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+				?>
+				</div>
+			</div>
 
 
-				get_template_part( 'template-parts/content', 'page' );
-
-		?>
+		<?php	get_template_part( 'template-parts/content', 'page' ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
