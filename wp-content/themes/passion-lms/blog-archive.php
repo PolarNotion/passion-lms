@@ -22,7 +22,7 @@ get_header(); ?>
 				echo "hello world: " . $team_id;
 
 				$args = array(
-					'posts_per_page'	=> 10,
+					'posts_per_page'	=> -1,
 					'meta_query'	=> array(
 						array(
 								'key'		=> 'view_access',
@@ -38,28 +38,27 @@ get_header(); ?>
 					$featured_image = get_field('featured_image');
 				?>
 					<div class="row">
-						<div class="blog-teaser">
-		          <?php if($featured_image != ''): ?>
-		              <div class="blog-image">
-		                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
-		              </div>
-		          <?php endif; ?>
-		          <?php the_title(); ?>
-		          <?php the_excerpt(); ?>
-		          <a href="<?php the_permalink(); ?>">Read More</a>
-		        </div>
+						<div class="col-sm-4">
+							<div class="blog-teaser">
+			          <?php if($featured_image != ''): ?>
+			              <div class="blog-image">
+			                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
+			              </div>
+			          <?php endif; ?>
+			          <?php the_title(); ?>
+			          <?php the_excerpt(); ?>
+			          <a href="<?php the_permalink(); ?>">Read More</a>
+			        </div>
+						</div>
 					</div>
 
 				<?php endwhile;
 				?>
 
 			</div>
-			<?php the_posts_navigation();
-			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

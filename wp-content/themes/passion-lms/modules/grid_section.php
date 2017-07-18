@@ -3,9 +3,7 @@
 	$access  = get_sub_field('access');
   $row_id  = get_row_index();
 
-	$permissions_list = explode(" ", $access);
-
-	if (pn_user_has_access($permissions_list)):
+	if (pn_user_has_access($access)):
 ?>
 
 <section class="pad">

@@ -232,21 +232,30 @@ function end_session() {
 
 // Permissions Stuff...
 global $user_permissions;
-$user_permissions = array("101", "11", "202", "203", "4", "5");
+$user_permissions = array("101", "10", "202", "203", "4", "5");
 
 // pn_user_has_access
 // Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing
 // RETURN: True if this user has a permission key that is also on the $allowed_permissions list.
 function pn_user_has_access ($allowed_permissions) {
- global $user_permissions; // The global array of this user's permissions
- $user_has_access = FALSE;
- $allowed_array   = explode(',', trim($allowed_permissions));
+  global $user_permissions; // The global array of this user's permissions
+  $user_has_access = FALSE;
 
- foreach($user_permissions as $p) {
-	 if (in_array($p, $allowed_array)) {
-		 $user_has_access = TRUE;
-	 }
- }
+  echo "AP:".$allowed_permissions.":";
 
- return $user_has_access;
+  if ($allowed_permissions != '' ):
+   $allowed_array   = explode(',', trim($allowed_permissions));
+
+   print_r($allowed_array);
+
+   foreach($user_permissions as $p) {
+  	 if (in_array($p, $allowed_array)) {
+  		 $user_has_access = TRUE;
+  	 }
+   }
+  else:
+   $user_has_access = TRUE;
+  endif;
+
+  return $user_has_access;
 }

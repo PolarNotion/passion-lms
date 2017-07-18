@@ -2,6 +2,8 @@
 	$title   = get_sub_field('title');
 	$access  = get_sub_field('access');
   $row_id  = get_row_index();
+
+	if (pn_user_has_access($access)):
 ?>
 
 <section class="">
@@ -92,3 +94,4 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
