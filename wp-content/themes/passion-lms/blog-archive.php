@@ -21,16 +21,29 @@ get_header(); ?>
 
 				echo "hello world: " . $team_id;
 
-				$args = array(
-					'posts_per_page'	=> -1,
-					'meta_query'	=> array(
-						array(
-								'key'		=> 'view_access',
-								'value'		=> serialize( strval($team_id) ),
-								'compare'	=> 'LIKE'
+				if ($team_id != 'EVERYONE'):
+					$args = array(
+						'posts_per_page'	=> -1,
+						'meta_query'	=> array(
+							array(
+									'key'		=> 'view_access',
+									'value'		=> serialize( strval($team_id) ),
+									'compare'	=> 'LIKE'
+							)
 						)
-					)
-				);
+					);
+				else:
+					$args = array(
+						'posts_per_page'	=> -1,
+						'meta_query'	=> array(
+							array(
+									'key'		=> 'view_access',
+									'value'		=> '',
+									'compare'	=> '='
+							)
+						)
+					);
+				endif;
 
 			  $loop = new WP_Query( $args );
 

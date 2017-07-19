@@ -6,6 +6,7 @@
  *
  * @package Passion_LMS
  */
+set_current_team_id('EVERYONE'); // This makes the blog archive work for EVERYONE blog posts.
 
 get_header(); ?>
 
