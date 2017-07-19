@@ -1,3 +1,38 @@
+/* Custom Styles for Passion Volunteer Management System */
+
+div a {
+  color: #000000;
+}
+
+.h5 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.pad-top-30 {
+  padding-top: 30px;
+}
+
+.btn-bw {
+  border: 4px solid #000000;
+}
+
+.btn-bw:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+a.a-wrapper,
+a.a-wrapper:hover,
+a.a-wrapper:visited,
+a.a-wrapper:active
+{
+  color: initial;
+  text-decoration: none;
+}
+
 .vertical-child {
     display: inline-flex;
     justify-content: center;
@@ -46,8 +81,8 @@ ul.block-line > li {
 /* announcement styles */
 .announcement {
   padding: 20px;
-  background-color: #8aa568;
-  color: white;
+  color: black;
+  box-shadow: 0 0 5px #888888;
 }
 
 .announcement h3 {
@@ -58,19 +93,6 @@ ul.block-line > li {
 section.section-spacing {
   margin-top: 40px;
   margin-bottom: 40px;
-}
-
-/* blog module styles */
-.blog h2 {
-  margin-bottom: 20px;
-}
-
-ul.blog-post {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  float: left;
-  width: 100%;
 }
 
 /* modal bootstrap override */
@@ -118,26 +140,49 @@ p:last-child {
 
 /* blog styles */
 
-.blog-image-first {
-  width: 20vw;
-  margin-right: 20px;
-  float: left;
+.blog h2 {
+  margin-bottom: 20px;
 }
 
 .blog-image {
-  width: 10vw;
-  margin-right: 20px;
+  width: 35%;
+  height: 100%;
   float: left;
-}
-
-.blog-post {
-  overflow: auto; /* fixes the background color problem */
 }
 
 .blog-teaser {
-  min-height: 91px;
+  height: 200px;
   float: left;
   min-resolution: 80vw;
+  box-shadow: 0 0 5px #888888;
+}
+
+.blog-teaser h3 {
+  margin-top: 0;
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.blog-teaser p, .blog-teaser em {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+.blog-excerpt em {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  line-height: 14px;
+  color: #888888;
+}
+
+.blog-excerpt {
+  overflow: hidden; /* this is incredibly important */
+  padding: 10px;
+  height: 100%;
+  position: relative;
 }
 
 /* Content List Module */

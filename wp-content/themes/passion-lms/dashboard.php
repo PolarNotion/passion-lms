@@ -48,7 +48,7 @@ get_header(); ?>
 						?>
 						<div class="container">
 							<div class="announcement <?php echo $pad_top; ?>">
-								<h3><?php echo $title; ?><?php echo get_the_ID(); ?> &nbsp;<i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></h3>
+								<h3><?php echo $title; ?> &nbsp;<i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></h3>
 								<?php echo $the_text; ?>
 								<?php if ($button_text != ''): ?>
 									<a href="<?php echo $button_link; ?>" class="btn btn-secondary-white btn-lg"><?php echo $button_text; ?></a>
@@ -77,28 +77,34 @@ get_header(); ?>
 				?>
 				<section class="section-spacing blog">
 					<div class="container">
-						<h2>FEATURED BLOG POSTS</h2>
+						<h2 class="h5">FEATURED BLOG POSTS</h2>
 						<div class="row">
 						<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
 				      $featured_image = get_field('featured_image');
 				    ?>
 				      <div class="col-sm-4">
-				        <div class="blog-teaser">
-				          <?php if($featured_image != ''): ?>
-				              <div class="blog-image">
-				                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
-				              </div>
-				          <?php endif; ?>
-				          <?php the_title(); ?>
-				          <?php the_excerpt(); ?>
-				          <a href="<?php the_permalink(); ?>">Read More</a>
-				        </div>
+								<a href="<?php the_permalink(); ?>" class="a-wrapper">
+					        <div class="blog-teaser">
+					          <?php if($featured_image != ''): ?>
+					              <div class="blog-image" style="background-image: url('<?php echo $featured_image; ?>'); background-size: cover; background-position: center;">
+					              </div>
+					          <?php endif; ?>
+										<div class="blog-excerpt">
+											<h3><?php the_title(); ?></h3>
+						          <?php the_excerpt(); ?>
+											<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+										</div>
+					        </div>
+								</a>
 				      </div>
 
 				    <?php endwhile;
 				          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
 						?>
 						</div>
+					</div>
+					<div class="text-center pad-top-30">
+						<a href="/blog-archive" class="btn btn-lg btn-bw">Show More Blogs</a>
 					</div>
 				</section>
 			<?php endif; ?>
