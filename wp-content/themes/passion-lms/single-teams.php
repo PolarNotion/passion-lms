@@ -22,15 +22,15 @@ get_header(); ?>
 
 		<?php
 
-			echo $title;
-			echo "<br>";
-			echo $description;
-			echo "<br>";
-			print_r(strval($team_id));
-			echo "<br>global team id:";
-			echo $_SESSION['current_team_id'];
-			echo "User Team Keys: ";
-			print_r($_SESSION['user_team_keys']);
+			// echo $title;
+			// echo "<br>";
+			// echo $description;
+			// echo "<br>";
+			// print_r(strval($team_id));
+			// echo "<br>global team id:";
+			// echo $_SESSION['current_team_id'];
+			// echo "User Team Keys: ";
+			// print_r($_SESSION['user_team_keys']);
 
 			// announcement args
 			$announcement_args = array(
@@ -90,6 +90,7 @@ get_header(); ?>
 		  $blog_loop = new WP_Query( $blog_args );
 			?>
 			<div class="container">
+				<h2>FEATURED BLOG POSTS</h2>
 				<div class="row">
 				<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
 		      $featured_image = get_field('featured_image');

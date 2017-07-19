@@ -15,7 +15,7 @@
           </a>
         </li>
         <li>
-          <a href="#" id="page_title" class="text-white">Page Title Here?</a>
+          <a href="#" id="page_title" class="text-white"><?php echo $page_title; ?></a>
         </li>
       </ul>
     </div>

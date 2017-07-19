@@ -47,7 +47,7 @@ get_header(); ?>
 			      </div>
 			  </div>
 			</section>
-			<?php print_r($_SESSION['valid_teams']); ?>
+			<?php print_r($_SESSION['user_team_keys']); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
