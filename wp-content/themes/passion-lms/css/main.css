@@ -54,6 +54,12 @@ ul.block-line > li {
   margin-top: 0;
 }
 
+/* Section spacing relies on vertical margins collapsing when they touch each other */
+section .section-spacing {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 /* blog module styles */
 .blog h2 {
   margin-bottom: 30px;
