@@ -247,11 +247,15 @@ function add_user_team_key ($team_id) {
 function pn_user_has_team_access ($team_doors) {
   $user_has_key = FALSE;
 
-  foreach($_SESSION['user_team_keys'] as $k) {
-    if (in_array($k, $team_doors)):
-      $user_has_key = TRUE;
-    endif;
-  }
+	if ($team_doors != ''):
+	  foreach($_SESSION['user_team_keys'] as $k) {
+	    if (in_array($k, $team_doors)):
+	      $user_has_key = TRUE;
+	    endif;
+	  }
+	else:
+		$user_has_key = TRUE; // No doors means it's an EVERYONE post
+	endif;
 
   return $user_has_key;
 }
