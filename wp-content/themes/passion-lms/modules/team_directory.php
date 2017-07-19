@@ -14,7 +14,7 @@ $loop = new WP_Query( $args );
         <?php while ( $loop->have_posts() ) : $loop->the_post();
           $access_list  = get_field('access_list');
           if (pn_user_has_access($access_list)):
-
+            add_user_team_key(get_the_ID());
               $team_name    = get_the_title();
               $image        = get_field('thumbnail_image');
               $team_page    = get_permalink();
@@ -33,3 +33,4 @@ $loop = new WP_Query( $args );
       </div>
   </div>
 </section>
+<?php print_r($_SESSION['valid_teams']); ?>

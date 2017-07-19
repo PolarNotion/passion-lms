@@ -230,9 +230,35 @@ function end_session() {
   session_destroy ();
 }
 
+function set_current_team_id ($team_id) {
+  $_SESSION['current_team_id'] = $team_id;
+}
+
+function add_user_team_key ($team_id) {
+  $teams_so_far = $_SESSION['user_team_keys'];
+  if (!in_array($team_id, $teams_so_far)):
+    $_SESSION['user_team_keys'][] = $team_id;
+  endif;
+}
+
+// pn_user_has_team_access
+// Argument: $team_doors: an array of team doors required for access
+// RETURN: True if this user has a valid "user_team_key" for one of the given doors. False otherwise.
+function pn_user_has_team_access ($team_doors) {
+  $user_has_key = FALSE;
+
+  foreach($_SESSION['user_team_keys'] as $k) {
+    if (in_array($k, $team_doors)):
+      $user_has_key = TRUE;
+    endif;
+  }
+
+  return $user_has_key;
+}
+
 // Permissions Stuff...
 global $user_permissions;
-$user_permissions = array("101", "10", "202", "203", "4", "5");
+$user_permissions = array("101", "10", "202", "203", "4", "5", '777');
 
 // pn_user_has_access
 // Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing
@@ -241,12 +267,8 @@ function pn_user_has_access ($allowed_permissions) {
   global $user_permissions; // The global array of this user's permissions
   $user_has_access = FALSE;
 
-  echo "AP:".$allowed_permissions.":";
-
   if ($allowed_permissions != '' ):
    $allowed_array   = explode(',', trim($allowed_permissions));
-
-   print_r($allowed_array);
 
    foreach($user_permissions as $p) {
   	 if (in_array($p, $allowed_array)) {

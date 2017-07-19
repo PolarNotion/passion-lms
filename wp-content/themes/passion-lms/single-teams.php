@@ -11,7 +11,7 @@ $description 	= get_field('team_description');
 $access_list 	= get_field('access_list');
 $team_id			= get_the_ID();
 
-$_SESSION['current_team_id'] = $team_id;
+set_current_team_id($team_id);
 
 if (pn_user_has_access($access_list)):
 
@@ -29,6 +29,8 @@ get_header(); ?>
 			print_r(strval($team_id));
 			echo "<br>global team id:";
 			echo $_SESSION['current_team_id'];
+			echo "User Team Keys: ";
+			print_r($_SESSION['user_team_keys']);
 
 			// announcement args
 			$announcement_args = array(
