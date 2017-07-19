@@ -55,14 +55,14 @@ ul.block-line > li {
 }
 
 /* Section spacing relies on vertical margins collapsing when they touch each other */
-section .section-spacing {
+section.section-spacing {
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
 /* blog module styles */
 .blog h2 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 ul.blog-post {
@@ -135,7 +135,6 @@ p:last-child {
 }
 
 .blog-teaser {
-  padding: 10px;
   min-height: 91px;
   float: left;
   min-resolution: 80vw;

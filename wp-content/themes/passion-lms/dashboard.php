@@ -59,7 +59,48 @@ get_header(); ?>
 					?>
 					</section>
 				<?php endif; ?>
+				<?php // blog args
+				$blog_args = array(
+					'posts_per_page'	=> 3,
+					'meta_query'	=> array(
+						array(
+								'key'		=> 'view_access',
+								'value'		=> '',
+								'compare'	=> '='
+						)
+					)
+				);
+			  $blog_loop = new WP_Query( $blog_args );
 
+				if ( $blog_loop->have_posts() ) :
+				?>
+				<section class="section-spacing blog">
+					<div class="container">
+						<h2>FEATURED BLOG POSTS</h2>
+						<div class="row">
+						<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
+				      $featured_image = get_field('featured_image');
+				    ?>
+				      <div class="col-sm-4">
+				        <div class="blog-teaser">
+				          <?php if($featured_image != ''): ?>
+				              <div class="blog-image">
+				                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
+				              </div>
+				          <?php endif; ?>
+				          <?php the_title(); ?>
+				          <?php the_excerpt(); ?>
+				          <a href="<?php the_permalink(); ?>">Read More</a>
+				        </div>
+				      </div>
+
+				    <?php endwhile;
+				          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+						?>
+						</div>
+					</div>
+				</section>
+			<?php endif; ?>
 			<?php
 			// TEAM Index module
 			$args = array(

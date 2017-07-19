@@ -46,8 +46,10 @@ get_header(); ?>
 			);
 
 		  $announcement_loop = new WP_Query( $announcement_args );
+
+			if ( $announcement_loop->have_posts() ) :
 			?>
-			<section class="pad">
+			<section class="section-spacing">
 				<?php
 				$item_no = 0;
 				while ( $announcement_loop->have_posts() ) : $announcement_loop->the_post();
@@ -75,7 +77,7 @@ get_header(); ?>
 		          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
 				?>
 				</section>
-
+				<?php endif; ?>
 			<?php // blog args
 			$blog_args = array(
 				'posts_per_page'	=> 3,
@@ -89,31 +91,32 @@ get_header(); ?>
 			);
 		  $blog_loop = new WP_Query( $blog_args );
 			?>
-			<div class="container">
-				<h2>FEATURED BLOG POSTS</h2>
-				<div class="row">
-				<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
-		      $featured_image = get_field('featured_image');
-		    ?>
-		      <div class="col-sm-4">
-		        <div class="blog-teaser">
-		          <?php if($featured_image != ''): ?>
-		              <div class="blog-image">
-		                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
-		              </div>
-		          <?php endif; ?>
-		          <?php the_title(); ?>
-		          <?php the_excerpt(); ?>
-		          <a href="<?php the_permalink(); ?>">Read More</a>
-		        </div>
-		      </div>
+			<section class="section-spacing">
+				<div class="container">
+					<h2>FEATURED BLOG POSTS</h2>
+					<div class="row">
+					<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
+			      $featured_image = get_field('featured_image');
+			    ?>
+			      <div class="col-sm-4">
+			        <div class="blog-teaser">
+			          <?php if($featured_image != ''): ?>
+			              <div class="blog-image">
+			                <div class="fixedratio" style="background-image: url('<?php echo $featured_image; ?>')"></div>
+			              </div>
+			          <?php endif; ?>
+			          <?php the_title(); ?>
+			          <?php the_excerpt(); ?>
+			          <a href="<?php the_permalink(); ?>">Read More</a>
+			        </div>
+			      </div>
 
-		    <?php endwhile;
-		          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
-				?>
+			    <?php endwhile;
+			          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+					?>
+					</div>
 				</div>
-			</div>
-
+			</section>
 		</div>
 			<a href="/blog-archive" class="btn btn-primary">Show More Blogs</a>
 		</div>
