@@ -43,7 +43,7 @@ get_header(); ?>
 						$pad_top = '';
 						$item_no += 1;
 						if ($item_no > 1) {
-							$pad_top = 'pad-top';
+							$pad_top = 'margin-top-30';
 						}
 						?>
 						<div class="container">

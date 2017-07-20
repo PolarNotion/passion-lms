@@ -6,7 +6,7 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-top-spacing">
+<section class="section-spacing">
   <div class="container">
 		<?php if($title != ''): ?>
 			<h2 class="h5"><?php echo $title; ?></h2>
@@ -19,7 +19,7 @@
           while(the_repeater_field('content_items')):
             $modal_id += 1;
             if($modal_id == 9) {
-              echo "</div><a href='#more_" . $row_id . "' class='btn btn-primary' data-toggle='collapse'>Show More</a><div class='row collapse' id='more_" . $row_id . "'>";
+              echo "</div><div class='text-center'><a href='#more_" . $row_id . "' class='btn btn-lg btn-bw' data-toggle='collapse'>VIEW MORE</a></div><div class='row collapse' id='more_" . $row_id . "'>";
             }
         ?>
 
