@@ -63,10 +63,6 @@
 											include 'partials/embed-content.php';
 										?>
                   </div>
-                  <div class="modal-footer">
-                    <h3><?php echo $title; ?></h3>
-                    <?php echo $description; ?>
-                  </div>
                 </div>
 
               </div>

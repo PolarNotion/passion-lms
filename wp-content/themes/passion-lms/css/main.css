@@ -1,7 +1,17 @@
 /* Custom Styles for Passion Volunteer Management System */
 
+body div {
+  color: #000000;
+}
+
 div a {
   color: #000000;
+}
+
+div p, div em {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
 }
 
 .h5 {
@@ -29,7 +39,7 @@ div a {
 
 .btn-bw {
   border: 4px solid #000000;
-  background-color: #ffffff;
+  background-color: transparent;
   color: #000000;
 }
 
@@ -130,6 +140,7 @@ section.section-spacing {
 
 .bs-override .modal-footer {
   text-align: left;
+  padding: 0;
 }
 
 .bs-override .modal-body {
@@ -139,6 +150,8 @@ section.section-spacing {
 .bs-override .modal-content {
   padding: 0;
   border: none;
+  border-radius: 0;
+  background-color: #F3F3F3;
 }
 
 p:last-child {
@@ -179,9 +192,7 @@ p:last-child {
 }
 
 .blog-teaser p, .blog-teaser em {
-  font-size: 14px;
-  line-height: 17px;
-  font-weight: 400;
+
 }
 
 .blog-excerpt em {
@@ -240,7 +251,20 @@ p:last-child {
 }
 
 .content-description {
-  padding: 0 20px 10px;
+  padding: 10px 20px 20px;
+}
+
+.content-title {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.content-description img.content-image {
+  padding-top: 10px;
+}
+
+.content-description a.btn {
+  margin-top: 20px;
 }
 
 ul.content-list {
