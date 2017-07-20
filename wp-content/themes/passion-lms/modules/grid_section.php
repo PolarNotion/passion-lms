@@ -9,7 +9,7 @@
 <section class="section-spacing">
   <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class="h5"><?php echo $title; ?></h2>
+			<h2 class="h5 margin-btm-neg-20"><?php echo $title; ?></h2>
 		<?php endif; ?>
     <div class="row">
 			<?php if(get_sub_field('content_items')): ?>
@@ -19,7 +19,7 @@
           while(the_repeater_field('content_items')):
             $modal_id += 1;
             if($modal_id == 9) {
-              echo "</div><div class='text-center'><a href='#more_" . $row_id . "' class='btn btn-lg btn-bw' data-toggle='collapse'>VIEW MORE</a></div><div class='row collapse' id='more_" . $row_id . "'>";
+              echo "</div><div class='text-center'><button class='btn btn-lg btn-bw margin-top-30' data-toggle='collapse' data-target='#more_" . $row_id . "'>VIEW MORE</button></div><div class='row collapse' id='more_" . $row_id . "'>";
             }
         ?>
 

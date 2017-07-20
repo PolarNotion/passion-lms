@@ -120,7 +120,7 @@ get_header(); ?>
 
 			<section class="section-spacing">
 			  <div class="container">
-					<h2 class="h5">SELECT A TEAM</h2>
+					<h2 class="h5 margin-btm-neg-20">SELECT A TEAM</h2>
 			      <div class="row">
 			        <?php while ( $loop->have_posts() ) : $loop->the_post();
 			          $access_list  = get_field('access_list');

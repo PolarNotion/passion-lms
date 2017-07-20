@@ -23,8 +23,14 @@ div a {
   margin-bottom: 30px;
 }
 
+.margin-btm-neg-20 {
+  margin-bottom: -20px;
+}
+
 .btn-bw {
   border: 4px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .btn-bw:hover {
@@ -198,7 +204,7 @@ p:last-child {
 .card {
   border-radius: 3px;
   box-shadow: 0 0 5px #888888;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .card .fixedratio {
