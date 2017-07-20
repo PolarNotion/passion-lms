@@ -120,6 +120,7 @@ get_header(); ?>
 
 			<section class="section-spacing">
 			  <div class="container">
+					<h2 class="h5">SELECT A TEAM</h2>
 			      <div class="row">
 			        <?php while ( $loop->have_posts() ) : $loop->the_post();
 			          $access_list  = get_field('access_list');
@@ -130,9 +131,11 @@ get_header(); ?>
 			              $team_page    = get_permalink();
 			            ?>
 			              <div class="col-sm-3">
-			                <a href="<?php echo $team_page; ?>">
-			                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-			                  <h3><?php echo $team_name; ?></h3>
+			                <a href="<?php echo $team_page; ?>" class="a-wrapper">
+												<div class="team-card">
+				                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
+				                  <h3><?php echo $team_name; ?></h3>
+												</div>
 			                </a>
 			              </div>
 			          <?php
@@ -143,7 +146,6 @@ get_header(); ?>
 			      </div>
 			  </div>
 			</section>
-			<?php print_r($_SESSION['user_team_keys']); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
