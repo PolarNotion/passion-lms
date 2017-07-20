@@ -95,6 +95,19 @@ section.section-spacing {
   margin-bottom: 40px;
 }
 
+section.section-top-spacing {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+/* Grid Section Module styles */
+.card h3 img {
+    max-width: 25px;
+    max-height: 25px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+}
+
 /* modal bootstrap override */
 .bs-override .close {
   position: absolute;
@@ -181,18 +194,19 @@ p:last-child {
   position: relative;
 }
 
-/* Team Section */
+/* Cards - used for Team Index and Grid Section */
 
-.team-card {
+.card {
   border-radius: 3px;
   box-shadow: 0 0 5px #888888;
+  margin-bottom: 30px;
 }
 
-.team-card .fixedratio {
+.card .fixedratio {
   border-radius: 3px 3px 0 0;
 }
 
-.team-card h3 {
+.card h3 {
   font-weight: 400;
   padding: 9px 6px;
   margin: 0;

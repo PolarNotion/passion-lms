@@ -132,7 +132,7 @@ get_header(); ?>
 			            ?>
 			              <div class="col-sm-3">
 			                <a href="<?php echo $team_page; ?>" class="a-wrapper">
-												<div class="team-card">
+												<div class="card">
 				                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
 				                  <h3><?php echo $team_name; ?></h3>
 												</div>

@@ -25,7 +25,12 @@ $(".toggleable").click(function(){
   $(target).fadeToggle();
 
   return false;
-})
+});
+
+// Match .card heights with jquery.matchHeight.js
+$(function() {
+	$('.card').matchHeight();
+});
 
 //// test the YouTube Video Ratio Keeper
 // var $allVideos = $("iframe[src^='https://www.youtube.com']"),

@@ -6,10 +6,10 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="pad">
+<section class="section-top-spacing">
   <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class=""><?php echo $title; ?></h2>
+			<h2 class="h5"><?php echo $title; ?></h2>
 		<?php endif; ?>
     <div class="row">
 			<?php if(get_sub_field('content_items')): ?>
@@ -40,12 +40,12 @@
 						$file_type = '';
 						include 'partials/file-icon.php';
           ?>
-            <div class="vertical-child fixedratio position-relative" style="background-image: url('<?php echo $image; ?>');">
-              <a href="#" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>"><img class="file-icon" src="<?php echo $file_icon ?>"></a>
-            </div>
-            <div>
-              <?php echo $title; ?>
-            </div>
+						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>">
+							<div class="card">
+								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
+								<h3><?php if($file_icon != ''){?><img src="<?php echo $file_icon ?>"><?php } ?><?php echo $title; ?></h3>
+							</div>
+						</a>
 
             <!-- Modal -->
             <div id="modal_<?php echo $modal_id; ?>" class="modal fade bs-override" role="dialog">

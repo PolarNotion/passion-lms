@@ -26,7 +26,7 @@ elseif($other_file != ''):
       $file_type = 'unknown';
   }
 else:
-  $file_icon = get_template_directory_uri() . " ";
+  $file_icon = '';
   $file_type = 'error';
 endif;
 
