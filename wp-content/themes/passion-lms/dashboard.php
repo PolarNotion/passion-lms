@@ -51,7 +51,7 @@ get_header(); ?>
 								<h3><?php echo $title; ?> &nbsp;<i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></h3>
 								<?php echo $the_text; ?>
 								<?php if ($button_text != ''): ?>
-									<a href="<?php echo $button_link; ?>" class="btn btn-secondary-white btn-lg"><?php echo $button_text; ?></a>
+									<a href="<?php echo $button_link; ?>" class="btn btn-bw"><?php echo $button_text; ?></a>
 								<?php endif; ?>
 							</div>
 						</div>
