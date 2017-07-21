@@ -215,6 +215,10 @@ p:last-child {
   color: #888888;
 }
 
+.single-blog img.top-image {
+  width: 100%;
+}
+
 
 /* Cards - used for Team Index and Grid Section */
 

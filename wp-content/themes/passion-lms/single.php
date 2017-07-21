@@ -37,7 +37,7 @@ get_header();
 							<?php echo $lead_line; ?>
 						</div>
 						<?php if($featured_image != ''): ?>
-								<img src="<?php echo $featured_image; ?>" class="">
+								<img src="<?php echo $featured_image; ?>" class="top-image">
 						<?php endif; ?>
 						<div class="blog-content">
 							<?php echo apply_filters( 'the_content', $post->post_content ); ?>
