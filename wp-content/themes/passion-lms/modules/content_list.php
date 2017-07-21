@@ -6,10 +6,10 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="">
-  <div class="container pad">
+<section class="section-spacing">
+  <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class=""><?php echo $title; ?></h2>
+			<h2 class="h5"><?php echo $title; ?></h2>
       <a id="video-bigger" class="btn btn-primary">Make Video Bigger</a>
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
@@ -22,6 +22,7 @@
             	$title       = get_sub_field('title');
   					  $image       = get_sub_field('image');
               $video_file  = get_sub_field('video_file');
+							$audio_file	 = get_sub_field('audio_file');
               $other_file  = get_sub_field('other_file');
 
               // This include sets $file_icon to the right icon file
@@ -39,17 +40,16 @@
             ?>
               <li class="<?php echo $active_class; ?>">
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
-                  <ul class="block-line content-trigger">
-                    <li>
-                      <div class="content-thumbnail">
-                        <img src="<?php echo $image; ?>" style="width: 75px;">
-                        <img class="file-icon" src="<?php echo $file_icon; ?>">
-                      </div>
-                    </li>
-                    <li class="title">
-                      <?php echo $title; ?>
-                    </li>
-                  </ul>
+                  <div class="content-trigger clearfix">
+                    <div class="content-thumbnail pull-left js-height">
+                      <img src="<?php echo $image; ?>" style="width: 75px;">
+                    </div>
+                    <div class="title js-height">
+												<div class="vert-center">
+													<?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><b><?php echo $title; ?></b>
+												</div>
+                    </div>
+                  </div>
                 </div>
               </li>
   				<?php endwhile; ?>
@@ -68,6 +68,7 @@
 					  $image       = get_sub_field('image');
 						$description = get_sub_field('description');
 					  $video_file  = get_sub_field('video_file');
+						$audio_file	 = get_sub_field('audio_file');
 					  $other_file  = get_sub_field('other_file');
             $item_no += 1;
             $active_class = '';
@@ -83,10 +84,6 @@
                 $file_type	= $file_type; // set by partials/icon-file.php above
                 include 'partials/embed-content.php';
               ?>
-              <div class="content-description">
-                <h4><?php echo $title; ?></h4>
-                <?php echo $description; ?>
-              </div>
             </div>
 				<?php endwhile; ?>
       </div><!-- end tab-content -->

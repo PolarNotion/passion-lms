@@ -29,7 +29,7 @@ $(".toggleable").click(function(){
 
 // Match .card heights with jquery.matchHeight.js
 $(function() {
-	$('.card').matchHeight();
+	$('.js-height').matchHeight();
 });
 
 //// test the YouTube Video Ratio Keeper

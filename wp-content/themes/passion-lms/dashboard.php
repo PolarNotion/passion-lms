@@ -130,7 +130,7 @@ get_header(); ?>
 			              $image        = get_field('thumbnail_image');
 			              $team_page    = get_permalink();
 			            ?>
-			              <div class="col-sm-3">
+			              <div class="col-sm-3 js-height">
 			                <a href="<?php echo $team_page; ?>" class="a-wrapper">
 												<div class="card">
 				                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>

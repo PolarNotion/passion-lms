@@ -1,6 +1,6 @@
 /* Custom Styles for Passion Volunteer Management System */
 
-body div {
+body {
   color: #000000;
 }
 
@@ -84,7 +84,7 @@ a.a-wrapper:active
   transform: translate(-50%, -50%);
 }
 
-ul.block-line {
+/*ul.block-line {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -96,7 +96,7 @@ ul.block-line > li {
   float: left;
   position: relative;
   display: block;
-}
+}*/
 
 /* announcement styles */
 .announcement {
@@ -224,7 +224,7 @@ p:last-child {
 
 .card h3 {
   font-weight: 400;
-  padding: 9px 6px;
+  padding: 10px;
   margin: 0;
   font-size: 18px;
   line-height: 22px;
@@ -232,18 +232,19 @@ p:last-child {
 
 /* Content List Module */
 .content-list-module-wrapper {
-  background-color: gray;
+  background-color: #F3F3F3;
 }
 
 .content-list-wrapper {
   width: 33%;
   float: left;
+  padding: 5px;
 }
 
 .content-pane-wrapper {
   width: 67%;
   float: left;
-  background-color: lightgray;
+  background-color: #F3F3F3;
 }
 
 .content-pane-wrapper.full-width {
@@ -273,14 +274,24 @@ ul.content-list {
   margin: 0;
 }
 
-ul.content-trigger {
-  background-color: lightgray;
-  border-bottom: solid 1px gray;
+.content-trigger {
+  background-color: #F3F3F3;
+  padding: 5px;
 }
 
-ul.content-trigger > li.title {
-  padding: 10px;
+.content-trigger > .title {
+  padding-left: 10px;
   font-weight: 900;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vert-center {
+  /*position: absolute;
+  top: 50%;
+  transform: translateY(-50%);*/
 }
 
 .content-thumbnail {

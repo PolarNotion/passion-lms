@@ -23,7 +23,7 @@
             }
         ?>
 
-          <div class="col-sm-3 js-height">
+          <div class="col-sm-3">
           <?php
           	$title       	= get_sub_field('title');
 					  $image       	= get_sub_field('image');
@@ -41,9 +41,9 @@
 						include 'partials/file-icon.php';
           ?>
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>">
-							<div class="card">
+							<div class="card js-height">
 								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-								<h3><?php if($file_icon != ''){?><img src="<?php echo $file_icon ?>"><?php } ?><?php echo $title; ?></h3>
+								<h3><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
 							</div>
 						</a>
 
