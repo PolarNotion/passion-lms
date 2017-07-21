@@ -237,6 +237,10 @@ function set_current_team_id ($team_id) {
   $_SESSION['current_team_id'] = $team_id;
 }
 
+function get_current_team_id () {
+	return $_SESSION['current_team_id'];
+}
+
 function add_user_team_key ($team_id) {
   $teams_so_far = $_SESSION['user_team_keys'];
   if (!in_array($team_id, $teams_so_far)):
@@ -265,7 +269,7 @@ function pn_user_has_team_access ($team_doors) {
 
 // Permissions Stuff...
 global $user_permissions;
-$user_permissions = array("101", "10", "202", "203", "4", "5", '777');
+$user_permissions = array("101", "10", "202", "203", "4", "5", '777', '11');
 
 // pn_user_has_access
 // Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing

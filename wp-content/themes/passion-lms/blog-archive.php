@@ -19,7 +19,7 @@ get_header(); ?>
 					<div class="row">
 						<?php
 						/* Start the Archive Loop */
-						$team_id = $_SESSION['current_team_id'];
+						$team_id = get_current_team_id();
 
 						if ($team_id != 'EVERYONE'):
 							$args = array(
@@ -60,9 +60,9 @@ get_header(); ?>
 									<?php endif; ?>
 									<div class="blog-excerpt">
 										<h3><?php the_title(); ?></h3>
-										<p>
+										<div class="blog-lead">
 											<?php echo $lead_line; ?>
-										</p>
+										</div>
 										<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
 									</div>
 								</div>

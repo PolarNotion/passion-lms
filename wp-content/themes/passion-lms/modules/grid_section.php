@@ -40,7 +40,7 @@
 						$file_type = '';
 						include 'partials/file-icon.php';
           ?>
-						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $modal_id; ?>">
+						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
 							<div class="card js-height">
 								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
 								<h3><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
@@ -48,7 +48,7 @@
 						</a>
 
             <!-- Modal -->
-            <div id="modal_<?php echo $modal_id; ?>" class="modal fade bs-override" role="dialog">
+            <div id="modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>" class="modal fade bs-override" role="dialog">
               <div class="modal-dialog">
 
                 <!-- Modal content-->
