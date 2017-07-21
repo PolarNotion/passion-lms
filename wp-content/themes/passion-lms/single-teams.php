@@ -88,6 +88,7 @@ get_header(); ?>
 						<div class="row">
 						<?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
 				      $featured_image = get_field('featured_image');
+							$lead_line			= get_field('lead_line');
 				    ?>
 				      <div class="col-sm-4">
 								<a href="<?php the_permalink(); ?>" class="a-wrapper">
@@ -98,8 +99,8 @@ get_header(); ?>
 					          <?php endif; ?>
 										<div class="blog-excerpt">
 											<h3><?php the_title(); ?></h3>
-						          <?php the_excerpt(); ?>
-											<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+						          <?php echo $lead_line; ?>
+											<em><?php echo 'Posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
 										</div>
 					        </div>
 								</a>

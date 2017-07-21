@@ -24,19 +24,22 @@ get_header();
 
 		<?php
 		$featured_image = get_field('featured_image');
-
+		$lead_line			= get_field('lead_line');
 		?>
-		<section class="single-blog">
+		<section class="single-blog section-spacing">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
 						<h2 class="h5"><?php the_title(); ?></h2>
-						<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+						<em><?php echo 'Posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+						<div class="blog-lead">
+							<?php echo $lead_line; ?>
+						</div>
 						<?php if($featured_image != ''): ?>
 								<img src="<?php echo $featured_image; ?>" class="">
 						<?php endif; ?>
 						<div class="blog-content">
-							<?php echo $post->post_content; ?>
+							<?php echo apply_filters( 'the_content', $post->post_content ); ?>
 						</div>
 					</div>
 				</div>

@@ -91,8 +91,8 @@ get_header(); ?>
 					          <?php endif; ?>
 										<div class="blog-excerpt">
 											<h3><?php the_title(); ?></h3>
-						          <?php the_excerpt(); ?>
-											<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+						          <?php echo $lead_line; ?>
+											<em><?php echo 'Posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
 										</div>
 					        </div>
 								</a>

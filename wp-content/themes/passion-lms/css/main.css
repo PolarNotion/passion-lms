@@ -212,8 +212,16 @@ p:last-child {
 
 .blog-content {
   padding-top: 40px;
-  padding-bottom: 40px;
 }
+
+.blog-lead {
+  padding-bottom: 20px;
+}
+
+.single-blog em {
+  color: #888888;
+}
+
 
 /* Cards - used for Team Index and Grid Section */
 
