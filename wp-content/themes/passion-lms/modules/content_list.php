@@ -41,8 +41,7 @@
               <li class="<?php echo $active_class; ?>">
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
                   <div class="content-trigger clearfix">
-                    <div class="content-thumbnail pull-left js-height">
-                      <img src="<?php echo $image; ?>" style="width: 75px;">
+                    <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
                     </div>
                     <div class="title js-height">
 												<div class="vert-center">
