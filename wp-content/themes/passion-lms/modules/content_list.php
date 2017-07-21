@@ -44,7 +44,7 @@
                     <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
                     </div>
                     <div class="title js-height">
-												<div class="vert-center">
+												<div class="truncate">
 													<?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><b><?php echo $title; ?></b>
 												</div>
                     </div>

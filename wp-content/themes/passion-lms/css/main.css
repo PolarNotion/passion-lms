@@ -309,3 +309,10 @@ li.active .title {
 .title:hover {
   color: gray;
 }
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
