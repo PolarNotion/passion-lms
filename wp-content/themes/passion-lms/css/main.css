@@ -179,6 +179,7 @@ p:last-child {
 
 .blog-teaser {
   height: 200px;
+  width: 100%;
   float: left;
   min-resolution: 80vw;
   box-shadow: 0 0 5px #888888;
@@ -210,11 +211,17 @@ p:last-child {
   position: relative;
 }
 
+.blog-excerpt .blog-lead {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .blog-content {
   padding-top: 40px;
 }
 
-.blog-lead {
+.single-blog .blog-lead {
   padding-bottom: 20px;
 }
 

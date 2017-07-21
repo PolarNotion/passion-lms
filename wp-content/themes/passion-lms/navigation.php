@@ -10,7 +10,7 @@
       </a>
       <ul class="navbar-nav nav">
         <li>
-          <a href="#" class="navbar-brand text-label">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand text-label">
             <img src="<?php echo get_template_directory_uri();?>/img/pcc_logo.png">
           </a>
         </li>
