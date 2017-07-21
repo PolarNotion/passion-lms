@@ -6,34 +6,42 @@
  *
  * @package Passion_LMS
  */
-
-$post_team_doors = get_field('view_access');
+global $header_bg_backup, $title_image_backup;
+$header_bg_backup 	= get_template_directory_uri() . "/img/blog_header.jpeg";
+$title_image_backup = get_template_directory_uri() . "/img/pcc-title-image.png";
+$post_team_doors 		= get_field('view_access');
 
 if (pn_user_has_team_access($post_team_doors)):
 get_header();
-echo "Valid Teams: ";
-print_r($_SESSION['user_team_keys']);
-echo "Access Doors: ";
-print_r($post_team_doors);
+// echo "Valid Teams: ";
+// print_r($_SESSION['user_team_keys']);
+// echo "Access Doors: ";
+// print_r($post_team_doors);
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		$featured_image = get_field('featured_image');
 
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
 		?>
+		<section class="single-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="h5"><?php the_title(); ?></h2>
+						<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+						<?php if($featured_image != ''): ?>
+								<img src="<?php echo $featured_image; ?>" class="">
+						<?php endif; ?>
+						<div class="blog-content">
+							<?php echo $post->post_content; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

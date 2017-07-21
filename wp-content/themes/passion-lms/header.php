@@ -9,9 +9,15 @@
  * @package Passion_LMS
  */
 
-$page_title = get_the_title();
-$header_bg_image = get_field('header_bg_image');
-$title_image = get_field('title_image');
+$page_title 			= get_the_title();
+$header_bg_image 	= get_field('header_bg_image');
+$title_image 			= get_field('title_image');
+
+if($header_bg_image == ''):
+	global $header_bg_backup, $title_image_backup;
+	$header_bg_image 	= $header_bg_backup;
+	$title_image 			= $title_image_backup;
+endif;
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>

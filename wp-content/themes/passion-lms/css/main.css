@@ -210,6 +210,11 @@ p:last-child {
   position: relative;
 }
 
+.blog-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 /* Cards - used for Team Index and Grid Section */
 
 .card {
