@@ -1,0 +1,74 @@
+<?php
+// blog-section.php
+// Args:
+// Current Team ID must be set
+// $num_posts should be set
+// $archive_link should be set to TRUE or FALSE
+
+if ($team_id == 'EVERYONE'):
+  $blog_args = array(
+    'posts_per_page'	=> $num_posts,
+    'meta_query'	=> array(
+      array(
+          'key'		=> 'view_access',
+          'value'		=> '',
+          'compare'	=> '='
+      )
+    )
+  );
+else:
+  $blog_args = array(
+    'posts_per_page'	=> $num_posts,
+    'meta_query'	=> array(
+      array(
+          'key'		=> 'view_access',
+          'value'		=> serialize( strval($team_id) ),
+          'compare'	=> 'LIKE'
+      )
+    )
+  );
+endif;
+$blog_loop = new WP_Query( $blog_args );
+
+if ( $blog_loop->have_posts() ) :
+?>
+<section class="section-spacing blog">
+  <div class="container">
+    <?php if ($header_text != ''): ?>
+      <h2 class="h5"><?php $header_text ?></h2>
+    <?php endif; ?>
+    <div class="row">
+    <?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
+      $featured_image = get_field('featured_image');
+      $lead_line			= get_field('lead_line');
+    ?>
+      <div class="col-sm-4">
+        <a href="<?php the_permalink(); ?>" class="a-wrapper">
+          <div class="blog-teaser">
+            <?php if($featured_image != ''): ?>
+                <div class="blog-image" style="background-image: url('<?php echo $featured_image; ?>'); background-size: cover; background-position: center;">
+                </div>
+            <?php endif; ?>
+            <div class="blog-excerpt">
+              <h3><?php the_title(); ?></h3>
+              <div class="blog-lead">
+                <?php echo $lead_line; ?>
+              </div>
+              <em><?php echo 'Posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    <?php endwhile;
+          wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+    ?>
+    </div>
+  </div>
+  <?php if ($archive_link): ?>
+    <div class="text-center pad-top-30">
+      <a href="/blog-archive" class="btn btn-lg btn-bw">Show More Blogs</a>
+    </div>
+  <?php endif; ?>
+</section>
+<?php endif; ?>

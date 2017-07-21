@@ -46,65 +46,14 @@ get_header();
 				</div>
 			</div>
 		</section>
-		<section class="section-spacing blog">
-			<div class="container">
-				<div class="row">
-					<?php
-					/* Start the Archive Loop */
-					$team_id = get_current_team_id();
-
-					if ($team_id != 'EVERYONE'):
-						$args = array(
-							'posts_per_page'	=> -1,
-							'meta_query'	=> array(
-								array(
-										'key'		=> 'view_access',
-										'value'		=> serialize( strval($team_id) ),
-										'compare'	=> 'LIKE'
-								)
-							)
-						);
-					else:
-						$args = array(
-							'posts_per_page'	=> -1,
-							'meta_query'	=> array(
-								array(
-										'key'		=> 'view_access',
-										'value'		=> '',
-										'compare'	=> '='
-								)
-							)
-						);
-					endif;
-
-					$loop = new WP_Query( $args );
-
-					while ( $loop->have_posts() ) : $loop->the_post();
-						$featured_image = get_field('featured_image');
-						$lead_line			= get_field('lead_line');
-					?>
-					<div class="col-sm-4">
-						<a href="<?php the_permalink(); ?>" class="a-wrapper">
-							<div class="blog-teaser">
-								<?php if($featured_image != ''): ?>
-										<div class="blog-image" style="background-image: url('<?php echo $featured_image; ?>'); background-size: cover; background-position: center;">
-										</div>
-								<?php endif; ?>
-								<div class="blog-excerpt">
-									<h3><?php the_title(); ?></h3>
-									<div class="blog-lead">
-										<?php echo $lead_line; ?>
-									</div>
-									<em><?php echo 'posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
-								</div>
-							</div>
-						</a>
-					</div>
-					<?php endwhile;
-					?>
-				</div>
-			</div>
-		</section>
+		<?php
+		// Args: $team_id, $num_posts, $archive_link, $header_text
+		$team_id 			= get_current_team_id();
+		$num_posts 		= 3;
+		$archive_link = TRUE;
+		$header_text	= '';
+		include 'components/blog-section.php';
+		?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
