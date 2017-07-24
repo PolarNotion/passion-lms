@@ -13,7 +13,7 @@
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>
-        <div class="content-list-wrapper">
+        <div class="content-list-wrapper js-content-list">
           <ul class="content-list">
           <?php
             $item_no = 0;
@@ -61,7 +61,7 @@
       <!-- The Tab Content -->
       <?php if(get_sub_field('content_items')): ?>
 
-        <div class="content-pane-wrapper tab-content">
+        <div class="content-pane-wrapper tab-content js-content-list">
           <?php
           $item_no = 0;
           while(the_repeater_field('content_items')):

@@ -275,6 +275,7 @@ p:last-child {
   width: 33%;
   float: left;
   padding: 5px;
+  overflow-y: scroll;
 }
 
 .content-pane-wrapper {
