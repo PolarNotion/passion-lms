@@ -37,10 +37,12 @@ div p, div em {
   margin-bottom: -20px;
 }
 
-.btn-bw {
+.btn.btn-bw {
   border: 4px solid #000000;
   background-color: transparent;
   color: #000000;
+  font-size: 18px;
+  padding: 18px 85px;
 }
 
 .btn-bw:hover {
@@ -280,13 +282,19 @@ p:last-child {
 
 .content-pane-wrapper {
   width: 67%;
+  height: 465.56px;
   float: left;
   background-color: #F3F3F3;
   position: relative; /* For the #video-bigger button */
 }
 
+.button-footer {
+  height: 86px;
+}
+
 .content-pane-wrapper.full-width {
   width: 100%;
+  height: auto;
 }
 
 #video-bigger {
@@ -321,13 +329,22 @@ p:last-child {
 }
 
 .content-title {
-  font-weight: bold;
-  padding-bottom: 10px;
+  height: 70px;
+  overflow-y: scroll;
+}
+
+.content-title h4 {
+  text-transform: none;
+  margin-top: 8px;
 }
 
 .content-description img.content-image {
   padding-top: 10px;
-  width: 100%;
+  height: 278.56px;
+}
+
+.content-description img.content-image.no-buttons {
+  height: 364.56px;
 }
 
 .content-description a.btn {

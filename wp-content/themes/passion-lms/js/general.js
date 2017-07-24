@@ -38,11 +38,11 @@ $(function() {
   });
 });
 
-$('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  $('.js-content-list').matchHeight({
-    target: $('.content-pane-wrapper')
-  });
-});
+// $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+//   $('.js-content-list').matchHeight({
+//     target: $('.content-pane-wrapper')
+//   });
+// });
 
 //// test the YouTube Video Ratio Keeper
 // var $allVideos = $("iframe[src^='https://www.youtube.com']"),
