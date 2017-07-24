@@ -253,6 +253,19 @@ p:last-child {
   right: 25px;
 }
 
+.new-tag-inline {
+  position: absolute;
+  background-color: rgb(158, 23, 72);
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  padding: 0 10px;
+  bottom: 5px;
+  right: 5px;
+}
+
 /* Content List Module */
 .content-list-module-wrapper {
   background-color: #F3F3F3;
@@ -317,6 +330,7 @@ ul.content-list {
   width: 75px;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
 li.active .title {
