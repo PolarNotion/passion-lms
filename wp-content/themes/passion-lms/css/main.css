@@ -86,6 +86,19 @@ a.a-wrapper:active
   transform: translate(-50%, -50%);
 }
 
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Header style overrides */
+.site-content header {
+  min-height: 60vh;
+  margin-top: -40px;
+}
+
 /* announcement styles */
 .announcement {
   padding: 20px;
@@ -109,6 +122,14 @@ section.section-spacing {
     max-height: 25px;
     padding-right: 5px;
     padding-bottom: 3px;
+}
+
+.bg-cover .card {
+  /*box-shadow: none;*/
+}
+
+.bg-cover h2.h5 {
+  color: #FFFFFF;
 }
 
 /* modal bootstrap override */
@@ -228,6 +249,7 @@ p:last-child {
   border-radius: 3px;
   box-shadow: 0 0 5px #888888;
   margin-top: 30px;
+  background-color: #FFFFFF;
 }
 
 .card .fixedratio {

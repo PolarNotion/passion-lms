@@ -1,12 +1,18 @@
 <?php
-	$title   = get_sub_field('title');
-	$access  = get_sub_field('access');
+	$title   	= get_sub_field('title');
+	$access  	= get_sub_field('access');
+	$bg_image	= get_sub_field('grid_bg_image');
+	$bg_cover = '';
+	if ($bg_image != ''):
+		$bg_cover = 'bg-cover';
+	endif;
   $row_id  = get_row_index();
 
 	if (pn_user_has_access($access)):
 ?>
 
 <section class="section-spacing">
+	<div class="<?php echo $bg_cover; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
 		<?php if($title != ''): ?>
 			<h2 class="h5 margin-btm-neg-20"><?php echo $title; ?></h2>
@@ -19,7 +25,7 @@
           while(the_repeater_field('content_items')):
             $modal_id += 1;
             if($modal_id == 9) {
-              echo "</div><div class='text-center'><button class='btn btn-lg btn-bw margin-top-30' data-toggle='collapse' data-target='#more_" . $row_id . "'>VIEW MORE</button></div><div class='row collapse' id='more_" . $row_id . "'>";
+              echo "</div></div></div><div class='text-center'><button class='btn btn-lg btn-bw margin-top-30' data-toggle='collapse' data-target='#more_" . $row_id . "'>VIEW MORE</button></div><div class='container'><div class='row collapse' id='more_" . $row_id . "'>";
             }
         ?>
 
@@ -74,6 +80,7 @@
 
 				<?php endwhile;
               endif; ?>
+			</div>
     </div>
   </div>
 </section>
