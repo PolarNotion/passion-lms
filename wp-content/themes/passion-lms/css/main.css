@@ -240,6 +240,19 @@ p:last-child {
   line-height: 22px;
 }
 
+.new-tag {
+  position: absolute;
+  background-color: rgb(158, 23, 72);
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  padding: 0 10px;
+  top: 40px;
+  right: 25px;
+}
+
 /* Content List Module */
 .content-list-module-wrapper {
   background-color: #F3F3F3;

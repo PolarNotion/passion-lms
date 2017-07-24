@@ -31,6 +31,8 @@
 					  $video_file  	= get_sub_field('video_file');
 					  $other_file  	= get_sub_field('other_file');
 						$audio_file		= get_sub_field('audio_file');
+						$date_posted	= get_sub_field('date_posted');
+						$one_week_ago = date_create('-1 week');
 
 						// This include sets $file_icon to the right icon file, and $file_type for use later by partials/embed-content.php
 						$video_file = $video_file;
@@ -42,6 +44,7 @@
           ?>
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
 							<div class="card js-height">
+								<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag">New</div><?php endif; ?>
 								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
 								<h3><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
 							</div>
