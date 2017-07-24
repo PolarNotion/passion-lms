@@ -47,7 +47,7 @@
                     </div>
                     <div class="title js-height">
 												<div class="truncate">
-													<?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><b><?php echo $title; ?></b>
+													<?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i>&nbsp; <?php } ?><?php echo $title; ?>
 												</div>
                     </div>
                   </div>

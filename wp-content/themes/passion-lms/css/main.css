@@ -274,14 +274,14 @@ p:last-child {
 }
 
 .content-list-wrapper {
-  width: 33%;
+  width: 32%;
   float: left;
   padding: 5px;
   overflow-y: scroll;
 }
 
 .content-pane-wrapper {
-  width: 67%;
+  width: 68%;
   height: 465.56px;
   float: left;
   background-color: #F3F3F3;
@@ -290,6 +290,10 @@ p:last-child {
 
 .button-footer {
   height: 86px;
+}
+
+.button-footer .two-btns {
+  width: 48%;
 }
 
 .content-pane-wrapper.full-width {
@@ -335,7 +339,8 @@ p:last-child {
 
 .content-title h4 {
   text-transform: none;
-  margin-top: 8px;
+  margin-top: 7px;
+  margin-bottom: 4px;
 }
 
 .content-description img.content-image {
@@ -363,12 +368,17 @@ ul.content-list {
 }
 
 .content-trigger > .title {
-  padding-left: 10px;
+  padding-left: 14px;
+  font-size: 14px;
   font-weight: 900;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.content-trigger > .title i {
+  font-size: 18px;
 }
 
 .content-thumbnail {

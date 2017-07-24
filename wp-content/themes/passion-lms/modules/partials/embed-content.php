@@ -37,8 +37,8 @@
           <img src="<?php echo $image ?>" class="content-image">
         </div>
         <div class="button-footer">
-          <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw pull-right" download>Download</a>
-          <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw pull-left" target="_blank">Preview</a>
+          <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw pull-right two-btns" download>Download</a>
+          <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw pull-left two-btns" target="_blank">Preview</a>
         </div>
       </div>
     <?php
