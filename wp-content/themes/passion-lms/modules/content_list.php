@@ -10,7 +10,6 @@
   <div class="container">
 		<?php if($title != ''): ?>
 			<h2 class="h5"><?php echo $title; ?></h2>
-      <a id="video-bigger" class="btn btn-primary">Make Video Bigger</a>
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>

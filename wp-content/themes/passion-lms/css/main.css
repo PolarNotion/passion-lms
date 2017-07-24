@@ -281,10 +281,38 @@ p:last-child {
   width: 67%;
   float: left;
   background-color: #F3F3F3;
+  position: relative; /* For the #video-bigger button */
 }
 
 .content-pane-wrapper.full-width {
   width: 100%;
+}
+
+#video-bigger {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 32px;
+  height: 31px;
+  padding: 8px 5px;
+  z-index: 999;
+  border-radius: 0 3px 3px 0;
+}
+
+#video-bigger:hover {
+  background-color: rgba(128,128,128,0.5);
+}
+
+#video-bigger:hover .icon-bar {
+  background-color: rgba(255,255,255,1.0);
+}
+.icon-bar {
+  margin-bottom:3px;
+  display: block;
+  width: 22px;
+  height: 3px;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 1px;
 }
 
 .content-description {
