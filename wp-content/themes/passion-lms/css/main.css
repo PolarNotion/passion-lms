@@ -126,7 +126,7 @@ h1.page-title {
 .announcement {
   padding: 20px;
   color: black;
-  box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px rgba(102,102,102,30);
 }
 
 .announcement h3 {
@@ -145,10 +145,6 @@ section.section-spacing {
     max-height: 25px;
     padding-right: 5px;
     padding-bottom: 3px;
-}
-
-.bg-cover .card {
-  /*box-shadow: none;*/
 }
 
 .bg-cover h2.h5 {
@@ -214,7 +210,7 @@ p:last-child {
   width: 100%;
   float: left;
   min-resolution: 80vw;
-  box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px rgba(102,102,102,30);
 }
 
 .blog-teaser h3 {
@@ -271,7 +267,7 @@ p:last-child {
 
 .card {
   border-radius: 3px;
-  box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px rgba(102,102,102,30);
   margin-top: 30px;
   background-color: #FFFFFF;
 }
