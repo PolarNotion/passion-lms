@@ -80,7 +80,7 @@ get_header(); ?>
 
 			<section class="section-spacing">
 			  <div class="container">
-					<h2 class="h5 margin-btm-neg-20">SELECT A TEAM</h2>
+					<h2 class="h5 margin-btm-neg-10">SELECT A TEAM</h2>
 			      <div class="row">
 			        <?php while ( $loop->have_posts() ) : $loop->the_post();
 			          $access_list  = get_field('access_list');
@@ -94,7 +94,7 @@ get_header(); ?>
 			                <a href="<?php echo $team_page; ?>" class="a-wrapper">
 												<div class="card">
 				                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-				                  <h3><?php echo $team_name; ?></h3>
+				                  <h3 class="truncate"><?php echo $team_name; ?></h3>
 												</div>
 			                </a>
 			              </div>

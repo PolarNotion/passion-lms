@@ -46,10 +46,6 @@ if ( $blog_loop->have_posts() ) :
       $title          = get_the_title();
       $title_length   = 2 * strlen($title);
 
-      echo "Lead:".$lead_length;
-      echo " Title:".$title_length;
-
-
       $lead_space = 215 - $title_length;
       if ($lead_space < $lead_length):
         $lead_line = substr($lead_line, 0, $lead_space) . "&hellip;";

@@ -15,7 +15,7 @@
 	<div class="<?php echo $bg_cover; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class="h5 margin-btm-neg-20"><?php echo $title; ?></h2>
+			<h2 class="h5 margin-btm-neg-10"><?php echo $title; ?></h2>
 		<?php endif; ?>
     <div class="row">
 			<?php if(get_sub_field('content_items')): ?>
@@ -49,10 +49,10 @@
 						include 'partials/file-icon.php';
           ?>
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
-							<div class="card js-height">
+							<div class="card">
 								<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag">New</div><?php endif; ?>
 								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-								<h3><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
+								<h3 class="truncate"><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
 							</div>
 						</a>
 
