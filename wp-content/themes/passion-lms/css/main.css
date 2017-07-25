@@ -90,13 +90,6 @@ a.a-wrapper:active
   transform: translate(-50%, -50%);
 }
 
-.bg-cover {
-  background-size: cover;
-  background-position: center center;
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-
 /* Header style overrides */
 .site-content header {
   min-height: 70vh;
@@ -147,8 +140,27 @@ section.section-spacing {
     padding-bottom: 3px;
 }
 
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
 .bg-cover h2.h5 {
   color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* modal bootstrap override */

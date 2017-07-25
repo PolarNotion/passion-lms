@@ -11,13 +11,15 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-spacing">
-	<div class="<?php echo $bg_cover; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
+<section class="section-spacing <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
 		<?php if($title != ''): ?>
 			<h2 class="h5 margin-btm-neg-10"><?php echo $title; ?></h2>
 		<?php endif; ?>
     <div class="row">
+			<?php if ($bg_cover != ''): ?>
+				<div class="bg-overlay"></div>
+			<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>
 
         <?php
@@ -25,7 +27,7 @@
           while(the_repeater_field('content_items')):
             $modal_id += 1;
             if($modal_id == 9) {
-              echo "</div></div></div><div class='text-center'><button class='btn btn-lg btn-bw margin-top-30' data-toggle='collapse' data-target='#more_" . $row_id . "'>VIEW MORE</button></div><div class='container'><div class='row collapse' id='more_" . $row_id . "'>";
+              echo "</div><div class='row collapse' id='more_" . $row_id . "'>";
             }
         ?>
 
@@ -81,7 +83,9 @@
 				<?php endwhile;
               endif; ?>
 			</div>
+			<?php if($modal_id > 8): ?>
+				<div class='text-center'><button class='btn btn-lg btn-bw margin-top-30 view-more-btn' data-toggle='collapse' data-target='#more_<?php echo $row_id; ?>'>VIEW MORE</button></div>
+			<?php endif; ?>
     </div>
-  </div>
 </section>
 <?php endif; ?>

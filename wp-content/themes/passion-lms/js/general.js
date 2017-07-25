@@ -44,6 +44,15 @@ $(function() {
 //   });
 // });
 
+$('.view-more-btn').click(function() {
+  var currentText = $(this).text();
+  if (currentText == 'VIEW MORE') {
+    $(this).text("SHOW LESS");
+  } else {
+    $(this).text("VIEW MORE");
+  }
+});
+
 //// test the YouTube Video Ratio Keeper
 // var $allVideos = $("iframe[src^='https://www.youtube.com']"),
 //     $fluidEl = $(".content-pane-wrapper");
