@@ -12,10 +12,15 @@
 $page_title 			= get_the_title();
 $header_bg_image 	= get_field('header_bg_image');
 $title_image 			= get_field('title_image');
+$title_text				= get_field('title_text');
 
 if($header_bg_image == ''):
-	global $header_bg_backup, $title_image_backup;
+	global $header_bg_backup;
 	$header_bg_image 	= $header_bg_backup;
+endif;
+
+if($title_image == '' && $title_text == ''):
+	global $title_image_backup;
 	$title_image 			= $title_image_backup;
 endif;
 
@@ -45,7 +50,11 @@ endif;
 			<header class="vertical-child pad">
 				<div class="container">
 					<div class="img-lg">
-						<img src="<?php echo $title_image; ?>">
+						<?php if($title_text != ''): ?>
+							<h1 class="page-title"><?php echo $title_text; ?></h1>
+						<?php else: ?>
+							<img src="<?php echo $title_image; ?>">
+						<?php endif; ?>
 					</div>
 				</div>
 				<a href="#scroll_prompt_anchor">

@@ -99,9 +99,28 @@ a.a-wrapper:active
 
 /* Header style overrides */
 .site-content header {
-  min-height: 60vh;
+  min-height: 70vh;
   margin-top: -40px;
+  position: relative;
 }
+
+header #scroll_prompt {
+  position: absolute;
+  padding-bottom: 65px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+h1.page-title {
+  color: #FFFFFF;
+  font-size: 65px;
+  text-transform: none;
+  letter-spacing: -5.5px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 0.8;
+}
+
 
 /* announcement styles */
 .announcement {
