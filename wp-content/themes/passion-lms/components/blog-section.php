@@ -42,6 +42,18 @@ if ( $blog_loop->have_posts() ) :
     <?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
       $featured_image = get_field('featured_image');
       $lead_line			= get_field('lead_line');
+      $lead_length    = strlen($lead_line);
+      $title          = get_the_title();
+      $title_length   = 2 * strlen($title);
+
+      echo "Lead:".$lead_length;
+      echo " Title:".$title_length;
+
+
+      $lead_space = 215 - $title_length;
+      if ($lead_space < $lead_length):
+        $lead_line = substr($lead_line, 0, $lead_space) . "&hellip;";
+      endif;
     ?>
       <div class="col-sm-4">
         <a href="<?php the_permalink(); ?>" class="a-wrapper">
@@ -51,7 +63,7 @@ if ( $blog_loop->have_posts() ) :
                 </div>
             <?php endif; ?>
             <div class="blog-excerpt">
-              <h3><?php the_title(); ?></h3>
+              <h3><?php echo $title; ?></h3>
               <div class="blog-lead">
                 <?php echo $lead_line; ?>
               </div>
