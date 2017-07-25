@@ -33,6 +33,10 @@ div p, div em {
   margin-bottom: 30px;
 }
 
+.margin-btm-20 {
+  margin-bottom: 20px;
+}
+
 .margin-btm-neg-20 {
   margin-bottom: -20px;
 }
@@ -187,7 +191,7 @@ p:last-child {
 }
 
 .blog-teaser {
-  height: 200px;
+  height: 185px;
   width: 100%;
   float: left;
   min-resolution: 80vw;
@@ -199,6 +203,7 @@ p:last-child {
   margin-bottom: 3px;
   font-size: 18px;
   line-height: 22px;
+  text-transform: none;
 }
 
 .blog-teaser p, .blog-teaser em {
@@ -258,10 +263,11 @@ p:last-child {
 
 .card h3 {
   font-weight: 400;
-  padding: 10px;
+  padding: 8px;
   margin: 0;
   font-size: 18px;
   line-height: 22px;
+  text-transform: none;
 }
 
 .new-tag {

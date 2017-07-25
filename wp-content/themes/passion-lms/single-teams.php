@@ -55,7 +55,7 @@ get_header(); ?>
 						?>
 						<div class="container">
 							<div class="announcement <?php echo $pad_top; ?>">
-								<h3><?php echo $title; ?> &nbsp;<i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i></h3>
+								<h3><?php echo $title; ?> <i class="fa fa-bell-o" aria-hidden="true"></i></h3>
 								<?php echo $the_text; ?>
 								<?php if ($button_text != ''): ?>
 									<a href="<?php echo $button_link; ?>" class="btn btn-bw"><?php echo $button_text; ?></a>

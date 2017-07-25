@@ -4,6 +4,7 @@
 // Current Team ID must be set
 // $num_posts should be set
 // $archive_link should be set to TRUE or FALSE
+// $header_text - the Header text for this module
 
 if ($team_id == 'EVERYONE'):
   $blog_args = array(
@@ -35,7 +36,7 @@ if ( $blog_loop->have_posts() ) :
 <section class="section-spacing blog">
   <div class="container">
     <?php if ($header_text != ''): ?>
-      <h2 class="h5"><?php $header_text ?></h2>
+      <h2 class="h5 margin-btm-20"><?php echo $header_text ?></h2>
     <?php endif; ?>
     <div class="row">
     <?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();
@@ -67,7 +68,7 @@ if ( $blog_loop->have_posts() ) :
   </div>
   <?php if ($archive_link): ?>
     <div class="text-center pad-top-30">
-      <a href="/blog-archive" class="btn btn-lg btn-bw">Show More Blogs</a>
+      <a href="/blog-archive" class="btn btn-lg btn-bw">View More Blogs</a>
     </div>
   <?php endif; ?>
 </section>
