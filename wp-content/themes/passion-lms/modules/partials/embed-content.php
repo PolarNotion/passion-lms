@@ -1,17 +1,17 @@
 <?php if ($video_file != ''): ?>
-  <div id="video-bigger" class="">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </div>
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
-  </div>
   <div class="content-description">
     <div class="content-title">
       <h4><?php echo $title; ?></h4>
       <?php echo $description; ?>
     </div>
+  </div>
+  <div class="embed-responsive embed-responsive-16by9">
+    <div class="video-bigger">
+      <div class="box-btn">
+        <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+      </div>
+    </div>
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
   </div>
 <?php elseif ($audio_file != ''): ?>
   <div class="content-description">

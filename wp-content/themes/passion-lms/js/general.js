@@ -32,18 +32,6 @@ $(function() {
 	$('.js-height').matchHeight();
 });
 
-$(function() {
-  $('.js-content-list').matchHeight({
-    target: $('.content-pane-wrapper')
-  });
-});
-
-// $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-//   $('.js-content-list').matchHeight({
-//     target: $('.content-pane-wrapper')
-//   });
-// });
-
 $('.view-more-btn').click(function() {
   var currentText = $(this).text();
   if (currentText == 'VIEW MORE') {
@@ -58,9 +46,10 @@ $('.view-more-btn').click(function() {
 //     $fluidEl = $(".content-pane-wrapper");
 //
 // test the video bigger button on the content list module
-$('#video-bigger').click(function(){
+$('.video-bigger').click(function(){
   $('.content-pane-wrapper').toggleClass('full-width');
   $('.content-list-wrapper').toggleClass('hidden');
+  $('.fa-chevron-circle-left').toggleClass('switch-chevron');
 });
 //
 // // Figure out and save aspect ratio for each video
