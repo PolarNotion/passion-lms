@@ -43,7 +43,7 @@
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
                   <div class="content-trigger clearfix">
                     <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
-											<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag-inline">New</div><?php endif; ?>
+											<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag-list">New</div><?php endif; ?>
                     </div>
                     <div class="title js-height">
 												<div class="truncate">

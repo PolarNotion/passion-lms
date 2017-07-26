@@ -99,7 +99,7 @@ a.a-wrapper:active
 
 header #scroll_prompt {
   position: absolute;
-  padding-bottom: 65px;
+  padding-bottom: 50px;
   padding-top: 40px;
   width: 100%;
 }
@@ -310,17 +310,18 @@ p:last-child {
   right: 25px;
 }
 
-.new-tag-inline {
+.new-tag-list {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(rgba(0, 175, 227, 0.5),rgba(0, 175, 227, 0.0) );
   font-size: 12px;
   line-height: 20px;
-  border-radius: 10px;
   color: white;
   font-weight: 500;
   padding: 0 10px;
-  bottom: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /* Content List Module */
