@@ -53,9 +53,7 @@
           <h4><?php echo $title; ?></h4>
           <?php echo $description; ?>
         </div>
-        <div class="text-center">
-          <img src="<?php echo $image ?>" class="content-image">
-        </div>
+        <img src="<?php echo $image ?>" class="content-image">
         <div class="text-center button-footer">
           <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw" download>Download</a>
         </div>
@@ -70,9 +68,7 @@
           <h4><?php echo $title; ?></h4>
           <?php echo $description; ?>
         </div>
-        <div class="text-center">
-          <img src="<?php echo $image ?>" class="content-image">
-        </div>
+        <img src="<?php echo $image ?>" class="content-image">
         <div class="text-center button-footer">
           <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw" download>Download</a>
         </div>
@@ -85,9 +81,7 @@ else: // no file was given ?>
       <h4><?php echo $title; ?></h4>
       <?php echo $description; ?>
     </div>
-    <div class="text-center">
-      <img src="<?php echo $image ?>" class="content-image no-buttons">
-    </div>
+    <img src="<?php echo $image ?>" class="content-image no-buttons">
   </div>
   <div class="file-type-empty">
   </div>

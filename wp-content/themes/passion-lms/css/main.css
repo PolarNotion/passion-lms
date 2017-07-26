@@ -191,7 +191,7 @@ section.section-spacing {
   padding: 0;
   border: none;
   border-radius: 0;
-  background-color: #F3F3F3;
+  background-color: #F7F7F7;
 }
 
 p:last-child {
@@ -299,7 +299,7 @@ p:last-child {
 
 .new-tag {
   position: absolute;
-  background-color: rgb(158, 23, 72);
+  background-color: #00B8E4;
   font-size: 12px;
   line-height: 20px;
   border-radius: 10px;
@@ -312,7 +312,7 @@ p:last-child {
 
 .new-tag-inline {
   position: absolute;
-  background-color: rgb(158, 23, 72);
+  background-color: rgba(0, 0, 0, 0.3);
   font-size: 12px;
   line-height: 20px;
   border-radius: 10px;
@@ -325,7 +325,7 @@ p:last-child {
 
 /* Content List Module */
 .content-list-module-wrapper {
-  background-color: #F3F3F3;
+  background-color: #FAFAFA;
 }
 
 .content-list-wrapper {
@@ -337,14 +337,10 @@ p:last-child {
 
 .content-pane-wrapper {
   width: 68%;
-  height: 465.56px;
+  height: 500px;
   float: left;
-  background-color: #F3F3F3;
-  position: relative; /* For the #video-bigger button */
-}
-
-.button-footer {
-  height: 86px;
+  background-color: #F7F7F7;
+  overflow-y: scroll;
 }
 
 .button-footer .two-btns {
@@ -388,7 +384,6 @@ p:last-child {
 }
 
 .content-title {
-  height: 70px;
   overflow-y: scroll;
 }
 
@@ -400,11 +395,7 @@ p:last-child {
 
 .content-description img.content-image {
   padding-top: 10px;
-  height: 278.56px;
-}
-
-.content-description img.content-image.no-buttons {
-  height: 364.56px;
+  width: 100%;
 }
 
 .content-description a.btn {
@@ -418,7 +409,6 @@ ul.content-list {
 }
 
 .content-trigger {
-  background-color: #F3F3F3;
   padding: 5px;
 }
 
