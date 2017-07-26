@@ -51,7 +51,7 @@ if ( $blog_loop->have_posts() ) :
         $lead_line = substr($lead_line, 0, $lead_space) . "&hellip;";
       endif;
     ?>
-      <div class="col-sm-4">
+      <div class="col-sm-4 margin-btm-30">
         <a href="<?php the_permalink(); ?>" class="a-wrapper">
           <div class="blog-teaser">
             <?php if($featured_image != ''): ?>
@@ -75,7 +75,7 @@ if ( $blog_loop->have_posts() ) :
     </div>
   </div>
   <?php if ($archive_link): ?>
-    <div class="text-center pad-top-30">
+    <div class="text-center">
       <a href="/blog-archive" class="btn btn-lg btn-bw">View More Blogs</a>
     </div>
   <?php endif; ?>
