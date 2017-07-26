@@ -362,7 +362,6 @@ a .highlight-item-wrapper:hover .highlight-item {
 }
 
 .menu > .menu-item:hover {
-  background-color: rgba(0, 0, 0, 0.75);
   color: white;
 }
 
@@ -429,17 +428,12 @@ a .highlight-item-wrapper:hover .highlight-item {
   list-style: none;
 }*/
 
-#menu-header-menu.menu {
-  width: 350px;
-}
 .menu li .subnav-wrapper {
   position: absolute;
-  width: 380px;
   display: none;
   left: inherit;
   right: 0;
-  padding: 40px;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 
@@ -455,7 +449,7 @@ a .highlight-item-wrapper:hover .highlight-item {
 
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  color: white;
+  color: #00B8E4;
 }
 
 .col-sm-6.chapter-item:nth-child(odd) {
@@ -1085,6 +1079,8 @@ input[type="submit"]:focus {
 
 #nav_primary {
   position: absolute;
+  background-color: rgba(0,0,0,0.50);
+  border-radius: 0;
   z-index: 999;
 }
 

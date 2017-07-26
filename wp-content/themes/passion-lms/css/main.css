@@ -451,3 +451,30 @@ li.active .title {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Navigation overrides */
+.subnav-wrapper .submenu li a:hover {
+  color: #00B8E4;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.subnav-wrapper .submenu {
+  min-width: 160px;
+}
+
+.subnav-wrapper .submenu li a {
+  padding: 12px;
+}
+
+.nav.navbar-nav li a {
+  display: block;
+}
+
+.nav.navbar-nav li a.dropdown-toggle {
+  padding-top: 15px;
+}
+
+.submenu .divider {
+  height: 1px;
+  background-color: #e5e5e5;
+}

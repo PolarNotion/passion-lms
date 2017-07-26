@@ -1,4 +1,3 @@
-<div id="navigation_gradient"></div>
 <nav id="nav_primary" class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -15,7 +14,7 @@
           </a>
         </li>
         <li>
-          <a href="#" id="page_title" class="text-white"><?php echo $page_title; ?></a>
+          <a href="#" id="page_title" class="text-white">connect</a>
         </li>
       </ul>
     </div>
@@ -23,39 +22,41 @@
       <div class="menu-header-menu-container">
         <ul id="menu-header-menu" class="menu nav navbar-nav navbar-right text-label">
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-            <a href="#">Our House</a>
+            <a href="#" class="dropdown-toggle"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
             <div class="subnav-wrapper">
               <div class="row">
                 <div class="col-sm-12">
                   <ul class="submenu">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
                       <a href="#">
-                        515
-                        <em><small class="text-muted text-lowercase"> 9:30 / 11:45 / 5</small></em>
+                        DASHBOARD
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
                       <a href="#">
-                        Cumberland
-                        <em><small class="text-muted text-lowercase">11</small></em>
+                        GIVE
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">D.C.</a>
+                      <a href="#">
+                        SERVE
+                      </a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="#">
+                        EDIT PROFILE
+                      </a>
+                    </li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="#">
+                        SIGN OUT
+                      </a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-            <a href="#">Rooms</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="#">Give</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom">
-            <a href="#">Watch</a>
           </li>
         </ul>
       </div>
