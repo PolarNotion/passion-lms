@@ -76,7 +76,7 @@ if ( $blog_loop->have_posts() ) :
   </div>
   <?php if ($archive_link): ?>
     <div class="text-center">
-      <a href="/blog-archive" class="btn btn-lg btn-bw">View More Blogs</a>
+      <a href="<?php echo get_permalink( get_page_by_title( 'Blog Archive' )->ID );?>" class="btn btn-lg btn-bw">View More Blogs</a>
     </div>
   <?php endif; ?>
 </section>
