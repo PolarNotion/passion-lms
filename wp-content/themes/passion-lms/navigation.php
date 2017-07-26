@@ -63,7 +63,7 @@
     </div>
   </div>
 </nav>
-<div id="mobile_navigation" style="display: block;">
+<div id="mobile_navigation" style="">
   <div class="menu-header-menu-container">
     <ul id="menu-header-menu-1" class="menu nav navbar-nav navbar-right text-label">
       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-63"><a href="#">Our House <em><small class="text-muted text-lowercase"></small></em></a>

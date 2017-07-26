@@ -54,6 +54,17 @@ div p, div em {
   color: #FFFFFF;
 }
 
+.bg-cover .btn-bw:hover {
+    color: #000000;
+    border-color: #ffffff;
+    background-color: #ffffff;
+}
+
+.bg-cover .btn-bw {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
 a.a-wrapper,
 a.a-wrapper:hover,
 a.a-wrapper:visited,

@@ -51,9 +51,9 @@ if ( $blog_loop->have_posts() ) :
         $lead_line = substr($lead_line, 0, $lead_space) . "&hellip;";
       endif;
     ?>
-      <div class="col-sm-4 margin-btm-30">
+      <div class="col-sm-4">
         <a href="<?php the_permalink(); ?>" class="a-wrapper">
-          <div class="blog-teaser">
+          <div class="blog-teaser margin-btm-30">
             <?php if($featured_image != ''): ?>
                 <div class="blog-image" style="background-image: url('<?php echo $featured_image; ?>'); background-size: cover; background-position: center;">
                 </div>
