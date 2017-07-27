@@ -269,7 +269,7 @@ function pn_user_has_team_access ($team_doors) {
 
 // Permissions Stuff...
 global $user_permissions;
-$user_permissions = array("101", "10", "202", "203", "4", "5", '777', '11');
+$user_permissions = array("1", "2", "3", "31");
 
 // pn_user_has_access
 // Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing
