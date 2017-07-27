@@ -54,13 +54,13 @@ div p, div em {
   color: #FFFFFF;
 }
 
-.bg-cover .btn-bw:hover {
+.bg-cover.btn-bw:hover {
     color: #000000;
     border-color: #ffffff;
     background-color: #ffffff;
 }
 
-.bg-cover .btn-bw {
+.bg-cover.btn-bw {
     color: #ffffff;
     border-color: #ffffff;
 }

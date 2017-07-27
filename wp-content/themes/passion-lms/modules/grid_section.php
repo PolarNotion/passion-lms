@@ -84,7 +84,7 @@
               endif; ?>
 			</div>
 			<?php if($modal_id > 8): ?>
-				<div class='text-center'><button class='btn btn-lg btn-bw margin-top-30 view-more-btn' data-toggle='collapse' data-target='#more_<?php echo $row_id; ?>'>VIEW MORE</button></div>
+				<div class='text-center'><button class='btn btn-lg btn-bw margin-top-30 view-more-btn <?php echo $bg_cover; ?>' data-toggle='collapse' data-target='#more_<?php echo $row_id; ?>'>VIEW MORE</button></div>
 			<?php endif; ?>
     </div>
 </section>
