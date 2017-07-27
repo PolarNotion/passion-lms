@@ -6,10 +6,10 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-spacing">
+<section class="section-spacing js-content-list">
   <div class="container">
 		<?php if($title != ''): ?>
-			<h2 class="h5"><?php echo $title; ?></h2>
+			<h2 class="h5"><span class="hide-list"><i class="fa fa-chevron-circle-left"></i></span> <?php echo $title; ?></h2>
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>

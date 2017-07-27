@@ -340,6 +340,7 @@ p:last-child {
 /* Content List Module */
 .content-list-module-wrapper {
   background-color: #FAFAFA;
+  position: relative;
 }
 
 .content-list-wrapper {
@@ -348,6 +349,33 @@ p:last-child {
   float: left;
   padding: 5px;
   overflow-y: scroll;
+  background-color: #FAFAFA;
+}
+
+.hide-list {
+  display: none;
+}
+
+@media (max-width: 768px){
+  div.content-list-wrapper {
+    width: 75%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  div.content-pane-wrapper {
+    width: 100%;
+  }
+
+  .video-bigger {
+    display: none;
+  }
+
+  .hide-list {
+    display: inline;
+  }
 }
 
 .content-pane-wrapper {

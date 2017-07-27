@@ -41,37 +41,16 @@ $('.view-more-btn').click(function() {
   }
 });
 
-//// test the YouTube Video Ratio Keeper
-// var $allVideos = $("iframe[src^='https://www.youtube.com']"),
-//     $fluidEl = $(".content-pane-wrapper");
-//
 // test the video bigger button on the content list module
 $('.video-bigger').click(function(){
-  $('.content-pane-wrapper').toggleClass('full-width');
-  $('.content-list-wrapper').toggleClass('hidden');
-  $('.fa-chevron-circle-left').toggleClass('switch-chevron');
+  var parent = $(this).closest('.content-list-module-wrapper');
+  $('.content-pane-wrapper', parent).toggleClass('full-width');
+  $('.content-list-wrapper', parent).toggleClass('hidden');
+  $('.fa-chevron-circle-left', parent).toggleClass('switch-chevron');
 });
-//
-// // Figure out and save aspect ratio for each video
-// $allVideos.each(function() {
-//   $(this).data('aspectRatio', this.height / this.width)
-//
-//   // and remove the hard coded width / height
-//   .removeAttr('height')
-//   .removeAttr('width');
-//
-// });
-//
-// // When the window is resized
-// $(window).resize(function() {
-//   var newWidth = $fluidEl.width();
-//
-//   //Resize all videos according to their own aspect ratio
-//   $allVideos.each(function() {
-//     var $el = $(this);
-//     $el
-//       .width(newWidth)
-//       .height(newWidth * $el.data('aspectRatio'));
-//   });
-// // Kick off one resize to fix all videos on page load
-// }).resize();
+
+$('.hide-list').click(function(){
+  var parentModule = $(this).closest('.js-content-list');
+  $('.content-list-wrapper', parentModule).toggleClass('hidden');
+  $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
+});
