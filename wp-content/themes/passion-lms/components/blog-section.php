@@ -59,8 +59,8 @@ if ( $blog_loop->have_posts() ) :
                 </div>
             <?php endif; ?>
             <div class="blog-excerpt">
-              <h3><?php echo $title; ?></h3>
               <div class="blog-lead">
+                <h3><?php echo $title; ?></h3>
                 <?php echo $lead_line; ?>
               </div>
               <em><?php echo 'Posted ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></em>
