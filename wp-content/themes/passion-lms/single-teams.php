@@ -7,7 +7,6 @@
  * @package Passion_LMS
  */
 $title 				= get_the_title();
-$description 	= get_field('team_description');
 $access_list 	= get_field('access_list');
 $team_id			= get_the_ID();
 
