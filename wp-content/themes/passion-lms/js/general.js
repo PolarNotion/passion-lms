@@ -45,12 +45,12 @@ $('.view-more-btn').click(function() {
 $('.video-bigger').click(function(){
   var parent = $(this).closest('.content-list-module-wrapper');
   $('.content-pane-wrapper', parent).toggleClass('full-width');
-  $('.content-list-wrapper', parent).toggleClass('hidden');
+  $('.content-list-wrapper', parent).toggleClass('no-width');
   $('.fa-chevron-circle-left', parent).toggleClass('switch-chevron');
 });
 
 $('.hide-list').click(function(){
   var parentModule = $(this).closest('.js-content-list');
-  $('.content-list-wrapper', parentModule).toggleClass('hidden');
+  $('.content-list-wrapper', parentModule).toggleClass('no-width');
   $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
 });

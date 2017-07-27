@@ -350,6 +350,8 @@ p:last-child {
   padding: 5px;
   overflow-y: scroll;
   background-color: #FAFAFA;
+  -webkit-transition: width 300ms, padding 100ms; /* Safari */
+  transition: width 300ms, padding 100ms;
 }
 
 .hide-list {
@@ -385,6 +387,8 @@ p:last-child {
   background-color: #F7F7F7;
   overflow-y: scroll;
   position: relative;
+  -webkit-transition: width 300ms; /* Safari */
+  transition: width 300ms;
 }
 
 .button-footer .two-btns {
@@ -394,6 +398,11 @@ p:last-child {
 .content-pane-wrapper.full-width {
   width: 100%;
   height: auto;
+}
+
+.content-list-wrapper.no-width {
+  width: 0px;
+  padding: 0px;
 }
 
 .video-bigger {
