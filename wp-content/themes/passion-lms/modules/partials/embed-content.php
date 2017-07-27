@@ -21,6 +21,11 @@
     </div>
   </div>
   <div class="embed-responsive embed-responsive-16by9">
+    <div class="video-bigger">
+      <div class="box-btn">
+        <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+      </div>
+    </div>
     <iframe class="embed-responsive-item" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<?php echo $audio_file; ?>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
   </div>
 <?php elseif ($other_file != ''):
@@ -33,7 +38,12 @@
           <h4><?php echo $title; ?></h4>
           <?php echo $description; ?>
         </div>
-        <div class="text-center">
+        <div class="position-relative">
+          <div class="video-bigger">
+            <div class="box-btn">
+              <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+            </div>
+          </div>
           <img src="<?php echo $image ?>" class="content-image">
         </div>
         <div class="button-footer">
@@ -53,7 +63,14 @@
           <h4><?php echo $title; ?></h4>
           <?php echo $description; ?>
         </div>
-        <img src="<?php echo $image ?>" class="content-image">
+        <div class="position-relative">
+          <div class="video-bigger">
+            <div class="box-btn">
+              <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+            </div>
+          </div>
+          <img src="<?php echo $image ?>" class="content-image">
+        </div>
         <div class="text-center button-footer">
           <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw" download>Download</a>
         </div>
@@ -68,7 +85,14 @@
           <h4><?php echo $title; ?></h4>
           <?php echo $description; ?>
         </div>
-        <img src="<?php echo $image ?>" class="content-image">
+        <div class="position-relative">
+          <div class="video-bigger">
+            <div class="box-btn">
+              <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+            </div>
+          </div>
+          <img src="<?php echo $image ?>" class="content-image">
+        </div>
         <div class="text-center button-footer">
           <a href="<?php echo $other_file; ?>" class="btn btn-lg btn-bw" download>Download</a>
         </div>
@@ -81,7 +105,14 @@ else: // no file was given ?>
       <h4><?php echo $title; ?></h4>
       <?php echo $description; ?>
     </div>
-    <img src="<?php echo $image ?>" class="content-image no-buttons">
+    <div class="position-relative">
+      <div class="video-bigger">
+        <div class="box-btn">
+          <i class="fa fa-chevron-circle-left fa-4x" aria-hidden="true"></i>
+        </div>
+      </div>
+      <img src="<?php echo $image ?>" class="content-image no-buttons">
+    </div>
   </div>
   <div class="file-type-empty">
   </div>
