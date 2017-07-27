@@ -10,8 +10,8 @@ $post_team_doors 		= get_field('view_access');
 
 if (pn_user_has_team_access($post_team_doors)):
 	global $header_bg_backup, $title_image_backup;
-	$header_bg_backup 	= get_template_directory_uri() . "/img/blog_header.jpeg";
-	$title_image_backup = get_template_directory_uri() . "/img/pcc-title-image.png";
+	$header_bg_backup 	= get_template_directory_uri() . "/img/default_header_bg.jpg";
+	$title_image_backup = get_template_directory_uri() . "/img/default_title_image.png";
 
 get_header();
 // echo "Valid Teams: ";
