@@ -248,6 +248,14 @@ function add_user_team_key ($team_id) {
   endif;
 }
 
+function add_team_link ($name, $link) {
+	$team_links = $_SESSION['team_links'];
+	$this_link = array($name, $link);
+	if(!in_array($this_link, $team_links)):
+		$_SESSION['team_links'][] = $this_link;
+	endif;
+}
+
 // pn_user_has_team_access
 // Argument: $team_doors: an array of team doors required for access
 // RETURN: True if this user has a valid "user_team_key" for one of the given doors. False otherwise.

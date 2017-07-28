@@ -22,6 +22,33 @@
       <div class="menu-header-menu-container">
         <ul id="menu-header-menu" class="menu nav navbar-nav navbar-right text-label">
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+            <a href="#" class="dropdown-toggle">TEAMS</a>
+            <div class="subnav-wrapper">
+              <div class="row">
+                <div class="col-sm-12">
+                  <ul class="submenu">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        DASHBOARD
+                      </a>
+                    </li>
+                    <?php
+                    foreach($_SESSION['team_links'] as $t){
+                      $team_name = $t[0];
+                      $team_link = $t[1];
+                    ?>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="<?php echo $team_link; ?>">
+                        <?php echo $team_name; ?>
+                      </a>
+                    </li>
+                    <?php } ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
             <a href="#" class="dropdown-toggle"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
             <div class="subnav-wrapper">
               <div class="row">

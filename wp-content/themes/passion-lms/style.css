@@ -357,7 +357,7 @@ a .highlight-item-wrapper:hover .highlight-item {
 }
 
 .nav>li {
-  position: inherit;
+  position: relative;
   display: block;
 }
 
