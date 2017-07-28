@@ -405,6 +405,10 @@ p:last-child {
   padding: 0px;
 }
 
+.modal .video-bigger {
+  display: none; /* don't show the video-bigger button on modal pop-ups */
+}
+
 .video-bigger {
   position: absolute;
   left: 0px;
@@ -413,7 +417,6 @@ p:last-child {
   height: 200px;
   padding: 0;
   z-index: 1;
-  border-radius: 0 3px 3px 0;
 }
 
 .video-bigger:hover .box-btn {
@@ -425,7 +428,7 @@ p:last-child {
   padding-left: 15px;
   height: 40px;
   width: 40px;
-  color: rgba(0,0,0,1.0);
+  color: #00B8E4;
   opacity: 0.0;
 }
 
