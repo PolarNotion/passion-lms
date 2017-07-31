@@ -50,7 +50,7 @@ endif;
 			<header class="vertical-child pad">
 				<div class="container">
 					<div class="img-lg">
-						<?php if($title_text != ''): ?>
+						<?php if($title_image == ''): ?>
 							<h1 class="page-title"><?php echo $title_text; ?></h1>
 						<?php else: ?>
 							<img src="<?php echo $title_image; ?>">

@@ -300,3 +300,10 @@ function pn_user_has_access ($allowed_permissions) {
 
   return $user_has_access;
 }
+
+// Add an Options page for the theme
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}
