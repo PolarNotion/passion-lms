@@ -8,6 +8,7 @@
 	endif;
   $row_id  = get_row_index();
 
+
 	if (pn_user_has_access($access)):
 ?>
 
@@ -26,14 +27,16 @@
           $modal_id = 0;
           while(the_repeater_field('content_items')):
             $modal_id += 1;
-            if($modal_id == 9) {
+            if($modal_id == 7) {
               echo "</div><div class='row collapse' id='more_" . $row_id . "'>";
             }
         ?>
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
           <?php
           	$title       	= get_sub_field('title');
+						$title_color = get_sub_field('title_color');
+						$btn_color = 'card__title--' . $title_color;
 					  $image       	= get_sub_field('image');
 						$description 	= get_sub_field('description');
 					  $video_file  	= get_sub_field('video_file');
@@ -54,7 +57,7 @@
 							<div class="card">
 								<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag">New</div><?php endif; ?>
 								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-								<h3 class="truncate"><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
+								<h3 class="truncate card__title <?php echo $btn_color; ?>"><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
 							</div>
 						</a>
 
