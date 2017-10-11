@@ -185,7 +185,7 @@ section.section-spacing {
 }
 
 .bs-override .modal-dialog {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .bs-override .modal-footer {
@@ -357,6 +357,12 @@ p:last-child {
   display: none;
 }
 
+@media (min-width: 768px){
+  .modal .modal-dialog { /* bootstrap override modal width */
+    width: 700px;
+  }
+}
+
 @media (max-width: 768px){
   div.content-list-wrapper {
     width: 75%;
@@ -436,7 +442,7 @@ p:last-child {
 }
 
 .content-description {
-  padding: 10px 20px 20px;
+  padding: 20px 30px 30px;
 }
 
 .content-title {
