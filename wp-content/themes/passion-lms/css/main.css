@@ -142,6 +142,10 @@ section.section-spacing {
   padding: 40px 0;
 }
 
+section.section-spacing:last-child {
+  padding-bottom: 80px;
+}
+
 /* Grid Section Module styles */
 .card h3 img {
     max-width: 25px;

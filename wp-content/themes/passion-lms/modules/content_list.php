@@ -1,13 +1,21 @@
 <?php
 	$title   = get_sub_field('title');
 	$access  = get_sub_field('access');
+	$bg_image	= get_sub_field('list_bg_image');
+	$bg_cover = '';
+	if ($bg_image != ''):
+		$bg_cover = 'bg-cover';
+	endif;
   $row_id  = get_row_index();
 
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-spacing js-content-list">
+<section class="section-spacing js-content-list <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
+		<?php if ($bg_cover != ''): ?>
+			<div class="bg-overlay"></div>
+		<?php endif; ?>
 		<?php if($title != ''): ?>
 			<h2 class="h5"><span class="hide-list"><i class="fa fa-chevron-circle-left"></i></span> <?php echo $title; ?></h2>
       <div class="content-list-module-wrapper clearfix">
