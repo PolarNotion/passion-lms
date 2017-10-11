@@ -54,3 +54,9 @@ $('.hide-list').click(function(){
   $('.content-list-wrapper', parentModule).toggleClass('no-width');
   $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
 });
+
+// Stop a video when the modal closes
+$(".modal").on('hidden.bs.modal', function(e) {
+    $iframe = $(this).find( "iframe" );
+    $iframe.attr("src", $iframe.attr("src"));
+});
