@@ -6,6 +6,7 @@
 // $audio_format: string: "soundcloud" or "dropbox"
 // $other_file: a URL for another kind of file. Can be PDF, XLS, image, etc.
 // $file_type: set by partials/icon-file.php above
+// $image: a thumbnail image that represents the content.
 
 if ($video_file != ''): ?>
   <div class="content-description">

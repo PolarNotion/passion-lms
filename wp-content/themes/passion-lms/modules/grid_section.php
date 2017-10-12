@@ -81,6 +81,7 @@
 											$audio_format = get_sub_field('audio_format');
 											$other_file 	= $other_file;
 											$file_type		= $file_type; // set by partials/icon-file.php above
+											$image				= $bg_image;
 											include 'partials/embed-content.php';
 										?>
                   </div>
