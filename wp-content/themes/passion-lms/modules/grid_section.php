@@ -12,7 +12,7 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-spacing <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
+<section class="section-spacing grid-content <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
 		<?php if($title != ''): ?>
 			<h2 class="h5 margin-btm-neg-10"><?php echo $title; ?></h2>
@@ -35,9 +35,10 @@
           <div class="col-sm-4">
           <?php
           	$title       	= get_sub_field('title');
-						$title_color = get_sub_field('title_color');
-						$btn_color = 'card__title--' . $title_color;
-					  $image       	= get_sub_field('image');
+						$title_color 	= get_sub_field('title_color');
+						$btn_color 		= 'card__title--' . $title_color;
+						$title_img		= get_sub_field('title_image');
+					  $bg_image     = get_sub_field('image');
 						$description 	= get_sub_field('description');
 					  $video_file  	= get_sub_field('video_file');
 					  $other_file  	= get_sub_field('other_file');
@@ -56,8 +57,12 @@
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
 							<div class="card">
 								<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag">New</div><?php endif; ?>
-								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-								<h3 class="truncate card__title <?php echo $btn_color; ?>"><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
+								<div class="fixedratio" style="background-image: url(<?php echo $bg_image; ?>)"></div>
+								<?php if ( $title_img != '' ): ?>
+									<img class="card__titleImage"  src="<?php echo $title_img; ?>" />
+								<?php else: ?>
+									<h3 class="truncate card__title <?php echo $btn_color; ?>"><?php if($file_icon != ''){?><i class="fa <?php echo $file_icon; ?>" aria-hidden="true"></i> <?php } ?><?php echo $title; ?></h3>
+								<?php endif; ?>
 							</div>
 						</a>
 

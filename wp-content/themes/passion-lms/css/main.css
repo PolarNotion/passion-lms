@@ -305,7 +305,7 @@ p:last-child {
   position: relative;
 }
 
-.card:hover::before {
+.grid-content .card:hover::before {
   content: " ";
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
@@ -326,6 +326,14 @@ p:last-child {
   font-size: 18px;
   line-height: 22px;
   text-transform: none;
+}
+
+.card__titleImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
 }
 
 h3.truncate.card__title {
@@ -408,34 +416,6 @@ h3.truncate.card__title {
 
 .hide-list {
   display: none;
-}
-
-@media (min-width: 768px){
-  .modal .modal-dialog { /* bootstrap override modal width */
-    width: 700px;
-  }
-}
-
-@media (max-width: 768px){
-  div.content-list-wrapper {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  div.content-pane-wrapper {
-    width: 100%;
-  }
-
-  .video-bigger {
-    display: none;
-  }
-
-  .hide-list {
-    display: inline;
-  }
 }
 
 .content-pane-wrapper {
@@ -600,4 +580,38 @@ div a:focus, div .btn:focus {
 .dropbox audio {
   width: 100%;
   margin-top: 30px;
+}
+
+/* MEDIA QUERIES SECTION */
+
+@media (min-width: 768px){
+  .modal .modal-dialog { /* bootstrap override modal width */
+    width: 700px;
+  }
+}
+
+@media (max-width: 768px){
+  div.content-list-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  div.content-pane-wrapper {
+    width: 100%;
+  }
+
+  .video-bigger {
+    display: none;
+  }
+
+  .hide-list {
+    display: inline;
+  }
+
+  .button-footer .two-btns {
+    width: 100%;
+  }
 }
