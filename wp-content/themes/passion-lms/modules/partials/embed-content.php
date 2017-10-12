@@ -1,4 +1,13 @@
-<?php if ($video_file != ''): ?>
+<?php
+// ARGUMENTS:
+// $video_file: string: a youtube, vimeo or haivision ID
+// $video_format: string: "youtube", "vimeo" or "haivision"
+// $audio_file: string: a soundcluod ID or dropbox URL
+// $audio_format: string: "soundcloud" or "dropbox"
+// $other_file: a URL for another kind of file. Can be PDF, XLS, image, etc.
+// $file_type: set by partials/icon-file.php above
+
+if ($video_file != ''): ?>
   <div class="content-description">
     <div class="content-title">
       <h4><?php echo $title; ?></h4>
@@ -19,15 +28,29 @@
       <h4><?php echo $title; ?></h4>
       <?php echo $description; ?>
     </div>
+    <?php if ($audio_format == "dropbox" ):
+      //Find the mp3?dl=0 at the end, and replace it with mp3?raw=1&t=.mp3
+      $position = strpos($audio_file, '.mp3?', -20);
+      $new_audio_file = substr($audio_file, 0, $position) . '.mp3?raw=1&t=.mp3';
+      ?>
+        <div class="position-relative dropbox">
+          <audio controls>
+            <source src="<?php echo $new_audio_file; ?>" type="audio/mpeg">
+          </audio>
+        </div>
+    <?php endif; // end dropbox ?>
   </div>
-  <div class="embed-responsive embed-responsive-16by9">
-    <div class="video-bigger">
-      <div class="box-btn">
-        <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+  <?php if ($audio_format == "soundcloud"): ?>
+    <div class="embed-responsive embed-responsive-16by9">
+      <div class="video-bigger">
+        <div class="box-btn">
+          <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+        </div>
       </div>
+      <iframe class="embed-responsive-item" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<?php echo $audio_file; ?>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
     </div>
-    <iframe class="embed-responsive-item" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<?php echo $audio_file; ?>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-  </div>
+  <?php endif; // end soundcloud ?>
+
 <?php elseif ($other_file != ''):
   $file_parts = pathinfo($other_file);
   switch($file_parts['extension']) {

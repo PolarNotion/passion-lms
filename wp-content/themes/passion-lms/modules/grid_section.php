@@ -70,10 +70,12 @@
                   <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 										<?php
-											$video_file = $video_file;
-											$audio_file = $audio_file;
-											$other_file = $other_file;
-											$file_type	= $file_type; // set by partials/icon-file.php above
+											$video_file 	= $video_file;
+											$video_format = get_sub_field('video_format');
+											$audio_file 	= $audio_file;
+											$audio_format = get_sub_field('audio_format');
+											$other_file 	= $other_file;
+											$file_type		= $file_type; // set by partials/icon-file.php above
 											include 'partials/embed-content.php';
 										?>
                   </div>

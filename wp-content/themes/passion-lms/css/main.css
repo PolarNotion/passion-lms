@@ -154,6 +154,10 @@ section.section-spacing:last-child {
     padding-bottom: 3px;
 }
 
+.view-more-btn {
+  margin-bottom: 20px;
+}
+
 .bg-cover {
   background-size: cover;
   background-position: center center;
@@ -367,7 +371,7 @@ h3.truncate.card__title {
   color: white;
   font-weight: 500;
   padding: 0 10px;
-  top: 40px;
+  top: 25px;
   right: 25px;
 }
 
@@ -414,7 +418,7 @@ h3.truncate.card__title {
 
 @media (max-width: 768px){
   div.content-list-wrapper {
-    width: 75%;
+    width: 50%;
     position: absolute;
     top: 0;
     left: 0;
@@ -590,4 +594,10 @@ li.active .title {
 /* BS Overrides */
 div a:focus, div .btn:focus {
   outline: none;
+}
+
+/* soundCloud and Dropbox */
+.dropbox audio {
+  width: 100%;
+  margin-top: 30px;
 }
