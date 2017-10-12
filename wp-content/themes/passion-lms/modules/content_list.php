@@ -17,8 +17,7 @@
 			<div class="bg-overlay"></div>
 		<?php endif; ?>
 		<?php if($title != ''): ?>
-			<h2 class="h5"><?php echo $title; ?></h2>
-			<div class="contentList__menuToggle"><span class="hide-list">MENU <i class="fa fa-chevron-circle-left"></i></span></div>
+			<h2 class="h5"><span class="hide-list"><i class="fa fa-chevron-circle-left"></i></span> <?php echo $title; ?></h2>
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>

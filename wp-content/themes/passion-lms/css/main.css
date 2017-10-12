@@ -414,13 +414,6 @@ h3.truncate.card__title {
   transition: width 300ms, padding 100ms;
 }
 
-.contentList__menuToggle {
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
 .hide-list {
   display: none;
 }
