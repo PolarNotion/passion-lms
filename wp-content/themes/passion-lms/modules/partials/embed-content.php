@@ -20,7 +20,13 @@ if ($video_file != ''): ?>
         <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
       </div>
     </div>
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
+    <?php if ($video_format == 'youtube'): ?>
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
+    <?php elseif ($video_format == 'vimeo'): ?>
+      <iframe src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <?php else: // It's Haivision ?>
+
+    <?php endif; // end of video if statement ?>
   </div>
 <?php elseif ($audio_file != ''): ?>
   <div class="content-description">
