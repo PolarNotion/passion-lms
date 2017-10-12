@@ -32,7 +32,7 @@
 							$audio_file	 = get_sub_field('audio_file');
               $other_file  = get_sub_field('other_file');
 							$date_posted	= get_sub_field('date_posted');
-							$one_week_ago = date_create('-1 week');
+							$one_month_ago = date_create('-30 days');
 
               // This include sets $file_icon to the right icon file
   						$video_file = $video_file;
@@ -51,7 +51,7 @@
                 <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
                   <div class="content-trigger clearfix">
                     <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
-											<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag-list">New</div><?php endif; ?>
+											<?php if($date_posted > date_format($one_month_ago, 'Ymd') ): ?><div class="new-tag-list">New</div><?php endif; ?>
                     </div>
                     <div class="title js-height">
 												<div class="truncate">
