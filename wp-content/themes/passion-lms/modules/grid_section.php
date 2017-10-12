@@ -38,7 +38,7 @@
 						$title_color 	= get_sub_field('title_color');
 						$btn_color 		= 'card__title--' . $title_color;
 						$title_img		= get_sub_field('title_image');
-					  $bg_image     = get_sub_field('image');
+					  $image     = get_sub_field('image');
 						$description 	= get_sub_field('description');
 					  $video_file  	= get_sub_field('video_file');
 					  $other_file  	= get_sub_field('other_file');
@@ -57,7 +57,7 @@
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
 							<div class="card">
 								<?php if($date_posted > date_format($one_week_ago, 'Ymd') ): ?><div class="new-tag">New</div><?php endif; ?>
-								<div class="fixedratio" style="background-image: url(<?php echo $bg_image; ?>)"></div>
+								<div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
 								<?php if ( $title_img != '' ): ?>
 									<img class="card__titleImage"  src="<?php echo $title_img; ?>" />
 								<?php else: ?>
@@ -81,7 +81,7 @@
 											$audio_format = get_sub_field('audio_format');
 											$other_file 	= $other_file;
 											$file_type		= $file_type; // set by partials/icon-file.php above
-											$image				= $bg_image;
+											$image				= $image;
 											include 'partials/embed-content.php';
 										?>
                   </div>
