@@ -107,13 +107,17 @@ get_header(); ?>
 			            add_user_team_key(get_the_ID());
 			              $team_name    = get_the_title();
 			              $image        = get_field('thumbnail_image');
+										$btn_color		= get_field('btn_color');
 			              $team_page    = get_permalink();
+
+										$btn_color = ($btn_color == '') ? 'white' : $btn_color;
+
 			            ?>
-			              <div class="col-sm-3 js-height">
+			              <div class="col-sm-4 js-height">
 			                <a href="<?php echo $team_page; ?>" class="a-wrapper">
 												<div class="card">
 				                  <div class="fixedratio" style="background-image: url(<?php echo $image; ?>)"></div>
-				                  <h3 class="truncate"><?php echo $team_name; ?></h3>
+													<h3 class="truncate card__title card__title--<?php echo $btn_color; ?>"><?php echo $team_name; ?></h3>
 												</div>
 			                </a>
 			              </div>
