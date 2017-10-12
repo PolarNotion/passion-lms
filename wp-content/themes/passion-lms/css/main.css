@@ -166,7 +166,7 @@ section.section-spacing:last-child {
   padding-bottom: 40px;
 }
 
-.bg-cover h2.h5 {
+.bg-cover h2.h5, .bg-cover .contentList__menuToggle {
   color: #FFFFFF;
   position: relative;
   z-index: 1;
@@ -414,6 +414,13 @@ h3.truncate.card__title {
   transition: width 300ms, padding 100ms;
 }
 
+.contentList__menuToggle {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
 .hide-list {
   display: none;
 }
@@ -590,7 +597,7 @@ div a:focus, div .btn:focus {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
   div.content-list-wrapper {
     width: 100%;
     position: absolute;

@@ -49,10 +49,20 @@ $('.video-bigger').click(function(){
   $('.fa-chevron-circle-left', parent).toggleClass('switch-chevron');
 });
 
+// Toggle the List Content menu (on mobile - .hide-list only shows up on mobile)
 $('.hide-list').click(function(){
-  var parentModule = $(this).closest('.js-content-list');
+  var parentModule = $(this).closest('.js-ContentList');
   $('.content-list-wrapper', parentModule).toggleClass('no-width');
   $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
+});
+
+// Close the List Content mobile menu when an item is clicked
+$('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  if ( $(window).width() < 768 ) {
+    var parentModule = $(this).closest('.js-ContentList');
+    $('.content-list-wrapper', parentModule).toggleClass('no-width');
+    $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
+  }
 });
 
 // Stop a video when the modal closes
@@ -63,5 +73,5 @@ $(".modal").on('hidden.bs.modal', function(e) {
     $('audio').each(function(){
         this.pause(); // Stop playing
         this.currentTime = 0; // Reset time
-    }); 
+    });
 });

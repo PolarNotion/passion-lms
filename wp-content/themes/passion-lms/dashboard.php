@@ -110,7 +110,7 @@ get_header(); ?>
 										$btn_color		= get_field('btn_color');
 			              $team_page    = get_permalink();
 
-										$btn_color = ($btn_color == '') ? 'white' : $btn_color;
+										$btn_color 		= ($btn_color == '') ? 'white' : $btn_color;
 
 			            ?>
 			              <div class="col-sm-4 js-height">

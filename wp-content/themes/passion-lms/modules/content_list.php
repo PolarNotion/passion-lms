@@ -11,17 +11,18 @@
 	if (pn_user_has_access($access)):
 ?>
 
-<section class="section-spacing js-content-list <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
+<section class="section-spacing js-ContentList <?php echo $bg_cover . ' position-relative'; ?>" style="background-image: url('<?php echo $bg_image; ?>')">
   <div class="container">
 		<?php if ($bg_cover != ''): ?>
 			<div class="bg-overlay"></div>
 		<?php endif; ?>
 		<?php if($title != ''): ?>
-			<h2 class="h5"><span class="hide-list"><i class="fa fa-chevron-circle-left"></i></span> <?php echo $title; ?></h2>
+			<h2 class="h5"><?php echo $title; ?></h2>
+			<div class="contentList__menuToggle"><span class="hide-list">MENU <i class="fa fa-chevron-circle-left"></i></span></div>
       <div class="content-list-module-wrapper clearfix">
 		<?php endif; ?>
 			<?php if(get_sub_field('content_items')): ?>
-        <div class="content-list-wrapper js-content-list">
+        <div class="content-list-wrapper">
           <ul class="content-list">
           <?php
             $item_no = 0;
@@ -69,7 +70,7 @@
       <!-- The Tab Content -->
       <?php if(get_sub_field('content_items')): ?>
 
-        <div class="content-pane-wrapper tab-content js-content-list">
+        <div class="content-pane-wrapper tab-content">
           <?php
           $item_no = 0;
           while(the_repeater_field('content_items')):

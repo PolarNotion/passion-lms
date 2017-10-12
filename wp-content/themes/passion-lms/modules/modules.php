@@ -7,10 +7,6 @@
 
     include('content_list.php');
 
-  elseif ( get_row_layout() == 'team_directory' ):
-
-    include('team_directory.php');
-
   endif;
 
  ?>
