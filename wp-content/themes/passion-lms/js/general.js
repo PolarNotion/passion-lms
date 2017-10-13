@@ -32,6 +32,7 @@ $(function() {
 	$('.js-height').matchHeight();
 });
 
+// View More button on Grid Content
 $('.view-more-btn').click(function() {
   var currentText = $(this).text();
   if (currentText == 'VIEW MORE') {
@@ -41,19 +42,14 @@ $('.view-more-btn').click(function() {
   }
 });
 
-// test the video bigger button on the content list module
-$('.video-bigger').click(function(){
-  var parent = $(this).closest('.content-list-module-wrapper');
-  $('.content-pane-wrapper', parent).toggleClass('full-width');
-  $('.content-list-wrapper', parent).toggleClass('no-width');
-  $('.fa-chevron-circle-left', parent).toggleClass('switch-chevron');
-});
-
 // Toggle the List Content menu (on mobile - .hide-list only shows up on mobile)
 $('.hide-list').click(function(){
   var parentModule = $(this).closest('.js-ContentList');
   $('.content-list-wrapper', parentModule).toggleClass('no-width');
   $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
+  if ( $(window).width() > 767 ) {
+    $('.content-pane-wrapper', parentModule).toggleClass('full-width');
+  }
 });
 
 // Close the List Content mobile menu when an item is clicked

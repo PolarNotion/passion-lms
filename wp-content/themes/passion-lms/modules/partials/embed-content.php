@@ -16,11 +16,6 @@ if ($video_file != ''): ?>
     </div>
   </div>
   <div class="embed-responsive embed-responsive-16by9">
-    <div class="video-bigger">
-      <div class="box-btn">
-        <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-      </div>
-    </div>
     <?php if ($video_format == 'youtube'): ?>
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
     <?php elseif ($video_format == 'vimeo'): ?>
@@ -49,11 +44,6 @@ if ($video_file != ''): ?>
   </div>
   <?php if ($audio_format == "soundcloud"): ?>
     <div class="embed-responsive embed-responsive-16by9">
-      <div class="video-bigger">
-        <div class="box-btn">
-          <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-        </div>
-      </div>
       <iframe class="embed-responsive-item" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<?php echo $audio_file; ?>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
     </div>
   <?php endif; // end soundcloud ?>
@@ -69,11 +59,6 @@ if ($video_file != ''): ?>
           <?php echo $description; ?>
         </div>
         <div class="position-relative">
-          <div class="video-bigger">
-            <div class="box-btn">
-              <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-            </div>
-          </div>
           <img src="<?php echo $image ?>" class="content-image">
         </div>
         <div class="button-footer">
@@ -94,11 +79,6 @@ if ($video_file != ''): ?>
           <?php echo $description; ?>
         </div>
         <div class="position-relative">
-          <div class="video-bigger">
-            <div class="box-btn">
-              <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-            </div>
-          </div>
           <img src="<?php echo $image ?>" class="content-image">
         </div>
         <div class="text-center button-footer">
@@ -116,11 +96,6 @@ if ($video_file != ''): ?>
           <?php echo $description; ?>
         </div>
         <div class="position-relative">
-          <div class="video-bigger">
-            <div class="box-btn">
-              <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-            </div>
-          </div>
           <img src="<?php echo $image ?>" class="content-image">
         </div>
         <div class="text-center button-footer">
@@ -136,11 +111,6 @@ else: // no file was given ?>
       <?php echo $description; ?>
     </div>
     <div class="position-relative">
-      <div class="video-bigger">
-        <div class="box-btn">
-          <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-        </div>
-      </div>
       <img src="<?php echo $image ?>" class="content-image no-buttons">
     </div>
   </div>
