@@ -20,8 +20,18 @@ if ($video_file != ''): ?>
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
     <?php elseif ($video_format == 'vimeo'): ?>
       <iframe src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <?php else: // It's Haivision ?>
-
+    <?php elseif ($video_format == 'haivision'): // It's Haivision ?>
+      <script src="http://player.theplatform.com/pdk/IfSiAC/tpPdkController.js"></script>
+      <iframe
+        id="player"
+        width="500"
+        height="300"
+        src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html" 
+        seamless="seamless"
+        allowfullscreen
+        onload="$pdk.bind(this, true); $pdk.controller.setIFrame(this, true);"></iframe>
+    <?php else: ?>
+      <!-- No valid video format - this should never happen -->
     <?php endif; // end of video if statement ?>
   </div>
 <?php elseif ($audio_file != ''): ?>
