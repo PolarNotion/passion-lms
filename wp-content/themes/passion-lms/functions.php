@@ -217,6 +217,27 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 
  // Setting up the Session - used for Permissions and the Current Team ID
+ // In this model there is:
+ // 1. user_permissions: An array of id numbers/keys. They are numbers created
+ //			by the Passion staff. These keys give the user
+ //			access to teams and different content on those teams. When a user tries
+ //			to open a team page, the team will only show up if the user has a key
+ //			that matches the "access_list" of that team.
+ //			So too, with content on a team page, the website will only display a content
+ //			section if this user has a key on the "access_list" for that content section.
+ // 2. current_team_wpid: This is a wordpress internal ID number for a given team
+ //			custom post type. This is necessary because blog-archive.php & single.php
+ //    	render different content based on the given team. The 'current_team_wpid' causes
+ //    	the team id to persist across page requests, so the correct content is rendered for that team
+ //			The current_team_wpid is set when the user switches to another team.
+ // 3. user_team_keys: An array of team WPIDs that this user has access to. Team
+ //			WPIDs are internal numbers on Wordpress. They are not the Team IDs created
+ //			by Passion staff. They are the internal IDs that wordpress assigns
+ //			to each team custom post type. This holds those IDs so that we don't have
+ //			to continually look those up.
+ // 4. team_links: These are team name & permalink pairs. Used only for navigation.php
+ //
+
 add_action('init', 'start_session', 1);
 
 function start_session() {
@@ -233,14 +254,17 @@ function end_session() {
   session_destroy ();
 }
 
-function set_current_team_id ($team_id) {
-  $_SESSION['current_team_id'] = $team_id;
+function set_current_team_wpid ($team_id) {
+  $_SESSION['current_team_wpid'] = $team_id;
 }
 
-function get_current_team_id () {
-	return $_SESSION['current_team_id'];
+function get_current_team_wpid () {
+	return $_SESSION['current_team_wpid'];
 }
 
+// This is called only on the Dashboard.
+// I store the wordpress team IDs (internal wordpress ID #s) that the user has
+// access to on session variable: user_team_keys.
 function add_user_team_key ($team_id) {
   $teams_so_far = $_SESSION['user_team_keys'];
   if (!in_array($team_id, $teams_so_far)):
@@ -248,6 +272,9 @@ function add_user_team_key ($team_id) {
   endif;
 }
 
+// Adds pairs of team names & team permalinks.
+// Used on the Dashboard page to add all of the teams this user has access to.
+// Then team_links are only used on the navigation.php file to populate the nav menu.
 function add_team_link ($name, $link) {
 	$team_links = $_SESSION['team_links'];
 	$this_link = array($name, $link);
@@ -256,10 +283,15 @@ function add_team_link ($name, $link) {
 	endif;
 }
 
-// pn_user_has_team_access
-// Argument: $team_doors: an array of team doors required for access
+// pn_user_has_post_access
+// Argument: $team_doors: an array of team doors required for access to this post (these are
+//					internal wordpress ID numbers for the teams. NOT Team IDs given by Passion)
 // RETURN: True if this user has a valid "user_team_key" for one of the given doors. False otherwise.
-function pn_user_has_team_access ($team_doors) {
+//
+// This is used only on the single.php page (a single blog post). Because Admin users
+//	set who has access to each post by choosing a team from existing team custom
+//	post types.
+function pn_user_has_post_access ($team_doors) {
   $user_has_key = FALSE;
 
 	if ($team_doors != ''):
@@ -280,8 +312,13 @@ global $user_permissions;
 $user_permissions = array("1", "2", "3", "31");
 
 // pn_user_has_access
-// Argument: $allowed_permissions: a string of the permission keys that are allowed for this thing
-// RETURN: True if this user has a permission key that is also on the $allowed_permissions list.
+// Argument: $allowed_permissions: a string of the permission keys that are allowed
+//					for this team or content. These "permission keys" are ID numbers created
+//					by Passion staff and NOT internal wordpress ID numbers.
+// RETURN: True if this user has a permission key that is on the $allowed_permissions list.
+//
+// This is the main function used to see if this user has access to a given team, or a
+//	section of content on that team. Used in dashboard.php, single-teams.php, content_list.php & grid_content.php
 function pn_user_has_access ($allowed_permissions) {
   global $user_permissions; // The global array of this user's permissions
   $user_has_access = FALSE;

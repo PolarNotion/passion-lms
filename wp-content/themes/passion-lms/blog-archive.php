@@ -9,13 +9,13 @@
 global $header_bg_backup, $title_image_backup;
 $header_bg_backup 	= get_template_directory_uri() . "/img/default_header_bg.jpg";
 $title_image_backup = get_template_directory_uri() . "/img/default_title_image.png";
-$current_team      = get_current_team_id();
+$current_team      = get_current_team_wpid();
 $url_team          = $_GET['tid'];
 
-// If global current_team_id is not equal to the URL team id, then make this the EVERYONE archive.
+// If global current_team_wpid is not equal to the URL team id, then make this the EVERYONE archive.
 if ($current_team != $url_team):
   $team_id = 'EVERYONE';
-  set_current_team_id('EVERYONE');
+  set_current_team_wpid('EVERYONE');
 else:
   $team_id = $current_team;
 endif;

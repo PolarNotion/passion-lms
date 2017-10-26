@@ -6,7 +6,7 @@
  *
  * @package Passion_LMS
  */
-set_current_team_id('EVERYONE'); // This makes the blog archive work for EVERYONE blog posts.
+set_current_team_wpid('EVERYONE'); // This makes the blog archive work for EVERYONE blog posts.
 
 // Set the list of Teams this user has access to...
 $_SESSION['team_links'] = [];
@@ -20,6 +20,7 @@ $loop = new WP_Query( $args );
 
 while ( $loop->have_posts() ) : $loop->the_post();
 	$access_list  = get_field('access_list');
+	// For each team. Get the access_list. If this user has access, save the team WPID, team name & permalink
 	if (pn_user_has_access($access_list)):
 		add_user_team_key(get_the_ID());
 		add_team_link(get_the_title(), get_permalink());
@@ -81,7 +82,7 @@ get_header(); ?>
 				<?php endif; ?>
 				<?php
 				// Args: $team_id, $num_posts, $archive_link
-				$team_id 			= get_current_team_id();
+				$team_id 			= get_current_team_wpid();
 				$num_posts 		= 3;
 				$archive_link = TRUE;
 				$header_text	= 'FEATURED BLOG POSTS';
