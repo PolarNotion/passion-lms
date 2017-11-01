@@ -17,18 +17,29 @@ if ($video_file != ''): ?>
   </div>
   <div class="embed-responsive embed-responsive-16by9">
     <?php if ($video_format == 'youtube'): ?>
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white" allowfullscreen></iframe>
+      <iframe
+        class="embed-responsive-item trackable-video"
+        data-media-id="<?php echo $video_file; ?>"
+        src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white&amp;enablejsapi=1" allowfullscreen></iframe>
     <?php elseif ($video_format == 'vimeo'): ?>
-      <iframe src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <iframe
+        class="trackable-video"
+        data-media-id="<?php echo $video_file; ?>"
+        src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen></iframe>
     <?php elseif ($video_format == 'haivision'): // It's Haivision ?>
       <iframe
+        class="trackable-video"
         data-media-id="<?php echo $video_file; ?>"
         width="500"
         height="300"
         src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html"
         seamless="seamless"
         allowfullscreen
-        onload="window.player<?php echo $video_file; ?> = $pdk.bind(this, false); $pdk.controller.setIFrame(this, true);"></iframe>
+        onload="window.player<?php echo $video_file; ?> = $pdk.bind(this, false); $pdk.controller.setIFrame(this, true); window.dispatchEvent(new CustomEvent('<?php echo $video_file; ?>Loaded'))"></iframe>
     <?php else: ?>
       <!-- No valid video format - this should be impossible. Make sure the ACF video_format variable is setup correctly -->
       <iframe src="https://player.vimeo.com/video/NOT-A-VALID-VIDEO?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
