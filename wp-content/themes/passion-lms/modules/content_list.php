@@ -48,7 +48,7 @@
               }
             ?>
               <li class="<?php echo $active_class; ?>">
-                <div class="bs-tab" data-toggle="tab" data-target="#item_<?php echo $row_id . '_' . $item_no; ?>">
+                <a class="bs-tab" data-toggle="tab" data-target="#item_<?php echo $row_id . '_' . $item_no; ?>">
                   <div class="content-trigger clearfix">
                     <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
 											<?php if($date_posted > date_format($one_month_ago, 'Ymd') ): ?><div class="new-tag-list">New</div><?php endif; ?>
@@ -59,7 +59,7 @@
 												</div>
                     </div>
                   </div>
-                </div>
+                </a>
               </li>
   				<?php endwhile; ?>
           </ul>

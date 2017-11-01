@@ -53,7 +53,7 @@ $('.hide-list').click(function(){
 });
 
 // Close the List Content mobile menu when an item is clicked
-$('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   if ( $(window).width() < 768 ) {
     var parentModule = $(this).closest('.js-ContentList');
     $('.content-list-wrapper', parentModule).toggleClass('no-width');
@@ -61,13 +61,34 @@ $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   }
 });
 
+// Reset or Pause a video/audio when another content list item is clicked.
+$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+  hiddenTabID = $(e.target).data('target');
+  $iframe = $(hiddenTabID).find('iframe');
+  // console.log(e.relatedTarget);
+  // Reset YouTube and Vimeo videos:
+  $iframe.attr("src", $iframe.attr("src"));
+
+  // Pause Haivision videos:
+  haivisionId = $iframe.data('haivision-id');
+  if (haivisionId) {
+    window["player" + haivisionId].pause(true);
+  }
+
+  // Reset dropbox audio
+  $('audio').each(function(){
+      this.pause(); // Stop playing
+      this.currentTime = 0; // Reset time
+  });
+});
+
 // Stop a video when the modal closes
 $(".modal").on('hidden.bs.modal', function(e) {
     $iframe = $(this).find( "iframe" );
     $iframe.attr("src", $iframe.attr("src"));
     // For Haivision
-    mediaID = $iframe.attr('data-media-id');
-    window["player" + mediaID].pause(true);
+    haivisionId = $iframe.data('haivision-id');
+    if (haivisionId) { window["player" + haivisionId].pause(true); }
     // For dropbox audio
     $('audio').each(function(){
         this.pause(); // Stop playing

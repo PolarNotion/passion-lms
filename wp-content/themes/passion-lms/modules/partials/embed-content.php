@@ -25,7 +25,7 @@ if ($video_file != ''): ?>
       <iframe
         class="trackable-video"
         data-media-id="<?php echo $video_file; ?>"
-        src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360"
+        src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" width="640" height="360"
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen
@@ -34,6 +34,7 @@ if ($video_file != ''): ?>
       <iframe
         class="trackable-video"
         data-media-id="<?php echo $video_file; ?>"
+        data-haivision-id="<?php echo $video_file; ?>"
         width="500"
         height="300"
         src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html"
