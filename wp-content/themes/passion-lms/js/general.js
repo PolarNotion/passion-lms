@@ -65,7 +65,10 @@ $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 $(".modal").on('hidden.bs.modal', function(e) {
     $iframe = $(this).find( "iframe" );
     $iframe.attr("src", $iframe.attr("src"));
-    // And for dropbox audio
+    // For Haivision
+    mediaID = $iframe.attr('data-media-id');
+    window["player" + mediaID].pause(true);
+    // For dropbox audio
     $('audio').each(function(){
         this.pause(); // Stop playing
         this.currentTime = 0; // Reset time

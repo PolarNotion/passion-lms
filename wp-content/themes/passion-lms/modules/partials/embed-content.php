@@ -21,17 +21,17 @@ if ($video_file != ''): ?>
     <?php elseif ($video_format == 'vimeo'): ?>
       <iframe src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <?php elseif ($video_format == 'haivision'): // It's Haivision ?>
-      <script src="http://player.theplatform.com/pdk/IfSiAC/tpPdkController.js"></script>
       <iframe
-        id="player"
+        data-media-id="<?php echo $video_file; ?>"
         width="500"
         height="300"
-        src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html" 
+        src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html"
         seamless="seamless"
         allowfullscreen
-        onload="$pdk.bind(this, true); $pdk.controller.setIFrame(this, true);"></iframe>
+        onload="window.player<?php echo $video_file; ?> = $pdk.bind(this, false); $pdk.controller.setIFrame(this, true);"></iframe>
     <?php else: ?>
-      <!-- No valid video format - this should never happen -->
+      <!-- No valid video format - this should be impossible. Make sure the ACF video_format variable is setup correctly -->
+      <iframe src="https://player.vimeo.com/video/NOT-A-VALID-VIDEO?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <?php endif; // end of video if statement ?>
   </div>
 <?php elseif ($audio_file != ''): ?>

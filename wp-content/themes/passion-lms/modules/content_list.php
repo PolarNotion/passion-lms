@@ -48,7 +48,7 @@
               }
             ?>
               <li class="<?php echo $active_class; ?>">
-                <div data-toggle="tab" data-target="#item_<?php echo $item_no; ?>">
+                <div class="bs-tab" data-toggle="tab" data-target="#item_<?php echo $row_id . '_' . $item_no; ?>">
                   <div class="content-trigger clearfix">
                     <div class="content-thumbnail pull-left js-height" style="background-image: url('<?php echo $image; ?>')">
 											<?php if($date_posted > date_format($one_month_ago, 'Ymd') ): ?><div class="new-tag-list">New</div><?php endif; ?>
@@ -85,7 +85,7 @@
               $active_class = 'active';
             }
           ?>
-            <div id="item_<?php echo $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
+            <div id="item_<?php echo $row_id . '_' . $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
               <?php
                 $video_file = $video_file;
 								$video_format = get_sub_field('video_format');
