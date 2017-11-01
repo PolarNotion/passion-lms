@@ -97,6 +97,15 @@
 	</footer>
 </div><!-- #page -->
 
+<!-- Video Tracking Call -->
+<script>
+	$(document).ready(function($) {
+		$('.trackable-video').videoLog({
+			connectId: 51234 // replace with global variable from auth process
+		});
+	});
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

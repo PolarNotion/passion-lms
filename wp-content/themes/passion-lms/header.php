@@ -36,6 +36,9 @@ endif;
 <!-- Font Awesome, added from bootstrap cdn -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+<!-- Haivision controller script -->
+<script src="http://player.theplatform.com/pdk/IfSiAC/tpPdkController.js"></script>
+
 <title><?php echo $page_title; ?></title>
 <?php wp_head(); ?>
 </head>
