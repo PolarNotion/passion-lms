@@ -273,6 +273,9 @@ function check_connect_auth() {
 		$_SESSION['connect_user_permissions'] = $connect_user_permissions;
 
 		// Set the list of Teams this user has access to...
+		$_SESSION['team_links']			= [];
+		$_SESSION['user_team_keys'] = [];
+
 		$args = array(
 			'posts_per_page'	=> -1,
 			'post_type'   => 'teams',
