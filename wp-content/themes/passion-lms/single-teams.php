@@ -10,9 +10,9 @@ $title 				= get_the_title();
 $access_list 	= get_field('access_list');
 $team_id			= get_the_ID();
 
-set_current_team_wpid($team_id);
-
 if (pn_user_has_access($access_list)):
+
+set_current_team_wpid($team_id);
 
 get_header(); ?>
 
