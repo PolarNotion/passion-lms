@@ -273,7 +273,7 @@ function check_connect_auth() {
 			header( 'Location: ' . $_GET['destination_url'] );
 			exit();
 		} else {
-			header('Location: ' . 'http://localhost:8888/dashboard');
+			header('Location: ' . get_site_url() . '/dashboard');
 			exit();
 		}
 	elseif($connect_user_id && $connect_user_permissions):
