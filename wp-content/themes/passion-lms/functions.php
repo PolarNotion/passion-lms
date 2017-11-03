@@ -245,16 +245,50 @@ require get_template_directory() . '/inc/jetpack.php';
  //
 
 add_action('init', 'start_session', 1);
+add_action('init', 'check_connect_auth', 2);
+add_action(‘wp_logout’, ‘end_session’);
+add_action(‘wp_login’, ‘end_session’);
+add_action(‘end_session_action’, ‘end_session’);
+
+// The first step of Connect Auth
+function check_connect_auth() {
+
+	ob_clean();
+	ob_start();
+
+	global $connect_user_id;
+	global $connect_user_permissions;
+
+	$connect_user_id 						= $_SESSION['connect_user_id'];
+	$connect_user_permissions 	= $_SESSION['connect_user_permissions'];
+
+	if ($_SERVER['REQUEST_METHOD'] === "GET" && strrpos($_SERVER['REQUEST_URI'], "/connect-auth") !== false ):
+		$connect_user_id = $_GET['person_id'];
+		$_SESSION['connect_user_id'] = $connect_user_id;
+		$connect_user_perm_string = $_GET['permissions'];
+		$connect_user_permissions = explode(',', trim($connect_user_perm_string));
+		$_SESSION['connect_user_permissions'] = $connect_user_permissions;
+
+		if ($_GET['destination_url']) {
+			header( 'Location: ' . $_GET['destination_url'] );
+			exit();
+		} else {
+			header('Location: ' . 'http://localhost:8888/dashboard');
+			exit();
+		}
+	elseif($connect_user_id && $connect_user_permissions):
+		return;
+	else:
+		wp_redirect("http://www.passioncitychurch.com");
+		exit(); // Redirect to Connect
+	endif;
+}
 
 function start_session() {
   if(!session_id()) {
     session_start();
   }
 }
-
-add_action(‘wp_logout’, ‘end_session’);
-add_action(‘wp_login’, ‘end_session’);
-add_action(‘end_session_action’, ‘end_session’);
 
 function end_session() {
   session_destroy ();
@@ -313,10 +347,6 @@ function pn_user_has_post_access ($team_doors) {
   return $user_has_key;
 }
 
-// Permissions Stuff...
-global $user_permissions;
-$user_permissions = array("1", "2", "3", "31");
-
 // pn_user_has_access
 // Argument: $allowed_permissions: a string of the permission keys that are allowed
 //					for this team or content. These "permission keys" are ID numbers created
@@ -326,14 +356,15 @@ $user_permissions = array("1", "2", "3", "31");
 // This is the main function used to see if this user has access to a given team, or a
 //	section of content on that team. Used in dashboard.php, single-teams.php, content_list.php & grid_content.php
 function pn_user_has_access ($allowed_permissions) {
-  global $user_permissions; // The global array of this user's permissions
+  global $connect_user_permissions; // The global array of this user's permissions
   $user_has_access = FALSE;
+	// print_r($connect_user_permissions); // debugging
 
   if ($allowed_permissions != '' ):
    $allowed_array   = explode(',', trim($allowed_permissions));
 
-   foreach($user_permissions as $p) {
-  	 if (in_array($p, $allowed_array)) {
+   foreach($connect_user_permissions as $p) {
+  	 if (in_array((string) $p, $allowed_array)) {
   		 $user_has_access = TRUE;
   	 }
    }

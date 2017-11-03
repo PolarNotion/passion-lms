@@ -8,7 +8,7 @@
  *
  * @package Passion_LMS
  */
-
+	global $connect_user_id;
 ?>
 
 	</div><!-- #content -->
@@ -101,7 +101,7 @@
 <script>
 	$(document).ready(function($) {
 		$('.trackable-video').videoLog({
-			connectId: 51234 // replace with global variable from auth process
+			connectId: <?php echo $connect_user_id; ?> // replace with global variable from auth process
 		});
 	});
 </script>
