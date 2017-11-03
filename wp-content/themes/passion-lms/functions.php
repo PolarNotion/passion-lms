@@ -263,12 +263,34 @@ function check_connect_auth() {
 	$connect_user_permissions 	= $_SESSION['connect_user_permissions'];
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET" && strrpos($_SERVER['REQUEST_URI'], "/connect-auth") !== false ):
+		// Set user
 		$connect_user_id = $_GET['person_id'];
 		$_SESSION['connect_user_id'] = $connect_user_id;
+
+		// Set permissions
 		$connect_user_perm_string = $_GET['permissions'];
 		$connect_user_permissions = explode(',', trim($connect_user_perm_string));
 		$_SESSION['connect_user_permissions'] = $connect_user_permissions;
 
+		// Set the list of Teams this user has access to...
+		$args = array(
+			'posts_per_page'	=> -1,
+			'post_type'   => 'teams',
+		);
+
+		$loop = new WP_Query( $args );
+
+		while ( $loop->have_posts() ) : $loop->the_post();
+			$access_list  = get_field('access_list');
+			// For each team. Get the access_list. If this user has access, save the team WPID, team name & permalink
+			if (pn_user_has_access($access_list)):
+				add_user_team_key(get_the_ID());
+				add_team_link(get_the_title(), get_permalink());
+			endif;
+		endwhile;
+		wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+
+		// Go to destination_url
 		if ($_GET['destination_url']) {
 			header( 'Location: ' . $_GET['destination_url'] );
 			exit();
@@ -307,7 +329,7 @@ function get_current_team_wpid () {
 // access to on session variable: user_team_keys.
 function add_user_team_key ($team_id) {
   $teams_so_far = $_SESSION['user_team_keys'];
-  if (!in_array($team_id, $teams_so_far)):
+  if (!isset($_SESSION['user_team_keys']) || !in_array($team_id, $teams_so_far)):
     $_SESSION['user_team_keys'][] = $team_id;
   endif;
 }
