@@ -172,7 +172,7 @@
           var mediaId = $this.attr('data-media-id');
           var checkpoints = [];
           var latestCompletion = 0;
-          window.addEventListener(mediaId + 'Loaded', function() {      
+          window.addEventListener(mediaId + 'Loaded', function() {
             var controller = window['player' + mediaId];
             controller.addEventListener('OnMediaLoadStart', function(e) {
               if (e.data.baseClip.isAd) return
@@ -183,7 +183,7 @@
               var duration = e.data.currentTime / 1000.0;
               latestCompletion = checkArrayForTimestamp(checkpoints, duration, latestCompletion, $this)
             })
-            
+
           })
 
 
