@@ -252,7 +252,6 @@ add_action(‘end_session_action’, ‘end_session’);
 
 // The first step of Connect Auth
 function check_connect_auth() {
-
 	ob_clean();
 	ob_start();
 
@@ -261,6 +260,10 @@ function check_connect_auth() {
 
 	$connect_user_id 						= $_SESSION['connect_user_id'];
 	$connect_user_permissions 	= $_SESSION['connect_user_permissions'];
+
+	if (strrpos($_SERVER['REQUEST_URI'], "wp-admin") !== false || strrpos($_SERVER['REQUEST_URI'], "wp-login") !== false): // Admins don't need to login the traditional way
+		return;
+	endif;
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET" && strrpos($_SERVER['REQUEST_URI'], "/connect-auth") !== false ):
 		// Set user
