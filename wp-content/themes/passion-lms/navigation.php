@@ -22,7 +22,7 @@
       <div class="menu-header-menu-container">
         <ul id="menu-header-menu" class="menu nav navbar-nav navbar-right text-label">
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-            <a href="#" class="dropdown-toggle">TEAMS</a>
+            <a href="#" class="dropdown-toggle">TEAMS&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
             <div class="subnav-wrapper">
               <div class="row">
                 <div class="col-sm-12">
@@ -48,43 +48,6 @@
               </div>
             </div>
           </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-            <a href="#" class="dropdown-toggle"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-            <div class="subnav-wrapper">
-              <div class="row">
-                <div class="col-sm-12">
-                  <ul class="submenu">
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">
-                        DASHBOARD
-                      </a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">
-                        GIVE
-                      </a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">
-                        SERVE
-                      </a>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">
-                        EDIT PROFILE
-                      </a>
-                    </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                      <a href="#">
-                        SIGN OUT
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -93,45 +56,18 @@
 <div id="mobile_navigation" style="">
   <div class="menu-header-menu-container">
     <ul id="menu-header-menu-1" class="menu nav navbar-nav navbar-right text-label">
-      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-63"><a href="#">Our House <em><small class="text-muted text-lowercase"></small></em></a>
-        <div class="subnav-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <ul class="sub-menu">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a title="9:30 / 11:45 / 5" href="https://passioncitychurch.com/weekendgatherings/">515 <em><small class="text-muted text-lowercase">9:30 / 11:45 / 5</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3590"><a title="11" href="https://passioncitychurch.com/cumberland/">Cumberland <em><small class="text-muted text-lowercase">11</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3654"><a href="https://passioncitychurch.com/dc/">D.C. <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://passioncitychurch.com/us/">us <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1956"><a href="https://passioncitychurch.com/ourpastor/">Our Pastor <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="https://passioncitychurch.com/doorholders/">Door Holders <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://passioncitychurch.com/baptism/">Baptism <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://passioncitychurch.com/launch/">Launch <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3240"><a href="https://connect.passioncitychurch.com">Connect <em><small class="text-muted text-lowercase"></small></em></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">DASHBOARD</a>
       </li>
-      <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-69"><a href="#">Rooms <em><small class="text-muted text-lowercase"></small></em></a>
-        <div class="subnav-wrapper">
-          <div class="row">
-            <div class="col-sm-12">
-              <ul class="sub-menu">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-76"><a href="https://passioncitychurch.com/communitygroups/">Community Groups <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://passioncitychurch.com/thegrove/">The Grove <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="https://passioncitychurch.com/flourish/">Flourish <em><small class="text-muted text-lowercase"></small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a title="(6-weeks – pre-k)" href="https://passioncitychurch.com/bloom/">bloom <em><small class="text-muted text-lowercase">(6-weeks – pre-k)</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a title="(k – 5th)" href="https://passioncitychurch.com/passionkids/">Passion Kids <em><small class="text-muted text-lowercase">(k – 5th)</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a title="(middle + high school)" href="https://passioncitychurch.com/students/">Passion Students <em><small class="text-muted text-lowercase">(middle + high school)</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3937"><a title="(18 – 25 years old)" href="https://passioncitychurch.com/sitc/">College <em><small class="text-muted text-lowercase">(18 – 25 years old)</small></em></a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-578"><a href="https://passioncitychurch.com/intern/">Intern Experience <em><small class="text-muted text-lowercase"></small></em></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <?php
+      foreach($_SESSION['team_links'] as $t){
+        $team_name = $t[0];
+        $team_link = $t[1];
+      ?>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom">
+        <a href="<?php echo $team_link; ?>"><?php echo $team_name; ?></a>
       </li>
-      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://passioncitychurch.com/give/">Give <em><small class="text-muted text-lowercase"></small></em></a></li>
-      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://passioncitychurch.com/watch/">Watch <em><small class="text-muted text-lowercase"></small></em></a></li>
+      <?php } ?>
     </ul>
   </div>
 </div>
