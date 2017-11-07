@@ -3,8 +3,11 @@
     // Establish our settings
     var settings = $.extend({
       connectId: null,
+      baseUrl: null,
     }, options);
     var youtubeVideos = [];
+
+    if (!settings.baseUrl) return
 
     function throttle (callback, limit) {
       var wait = false;
@@ -24,7 +27,7 @@
     function makeRequest (currentTime, totalTime, latestCompletion, $context) {
       var connectId = settings.connectId
       var mediaId = $context.attr('data-media-id')
-      var url = 'https://private-anon-c86ad25f29-dhportalconnect.apiary-mock.com/dhportal-videos?person=' + connectId + '&tag=' + mediaId
+      var url = settings.baseUrl + '/dhportal-videos?person=' + connectId + '&tag=' + mediaId
       $.ajax(url, {
         method: 'POST',
         data: {
