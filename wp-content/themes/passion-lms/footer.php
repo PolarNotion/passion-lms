@@ -102,7 +102,7 @@
 	$(document).ready(function($) {
 		$('.trackable-video').videoLog({
 			connectId: <?php echo $connect_user_id; ?>, // replace with global variable from auth process
-			baseUrl: 'https://private-anon-c86ad25f29-dhportalconnect.apiary-mock.com',
+			baseUrl: '<?php echo get_field('video_tracking_url_base', 'option'); ?>',
 		});
 	});
 </script>
