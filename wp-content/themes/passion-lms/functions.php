@@ -307,7 +307,8 @@ function check_connect_auth() {
 	elseif($connect_user_id && $connect_user_permissions):
 		return;
 	else:
-		wp_redirect("http://www.passioncitychurch.com");
+		$lockout_url = get_field('lockout_url', 'option');
+		wp_redirect($lockout_url);
 		exit(); // Redirect to Connect
 	endif;
 }
