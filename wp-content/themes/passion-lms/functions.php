@@ -219,7 +219,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Custom Polarn Notion Functions for use on Template Files
+ * Custom Polar Notion Functions for use on Template Files
  */
 
  // Setting up the Session - used for Permissions and the Current Team ID
@@ -246,12 +246,14 @@ require get_template_directory() . '/inc/jetpack.php';
 
 add_action('init', 'start_session', 1);
 add_action('init', 'check_connect_auth', 2);
-add_action(‘wp_logout’, ‘end_session’);
-add_action(‘wp_login’, ‘end_session’);
-add_action(‘end_session_action’, ‘end_session’);
+add_action('wp_logout', 'end_session');
+add_action('wp_login', 'end_session');
+add_action('end_session_action', 'end_session');
 
 // The first step of Connect Auth
 function check_connect_auth() {
+	$current_wp_user = wp_get_current_user();
+
 	ob_clean();
 	ob_start();
 
@@ -305,6 +307,8 @@ function check_connect_auth() {
 			exit();
 		}
 	elseif($connect_user_id && $connect_user_permissions):
+		return;
+	elseif($current_wp_user):
 		return;
 	else:
 		$lockout_url = get_field('lockout_url', 'option');
