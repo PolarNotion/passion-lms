@@ -252,8 +252,6 @@ add_action('end_session_action', 'end_session');
 
 // The first step of Connect Auth
 function check_connect_auth() {
-	$current_wp_user = wp_get_current_user();
-
 	ob_clean();
 	ob_start();
 
@@ -303,12 +301,11 @@ function check_connect_auth() {
 			header( 'Location: ' . $_GET['destination_url'] );
 			exit();
 		} else {
-			header('Location: ' . get_site_url() . '/dashboard');
+			header('Location: ' . get_site_url() );
 			exit();
 		}
-	elseif($connect_user_id && $connect_user_permissions):
 		return;
-	elseif($current_wp_user):
+	elseif($connect_user_id && $connect_user_permissions):
 		return;
 	else:
 		$lockout_url = get_field('lockout_url', 'option');
