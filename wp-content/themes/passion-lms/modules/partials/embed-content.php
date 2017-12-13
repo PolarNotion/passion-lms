@@ -5,11 +5,13 @@
 // $audio_file: string: a soundcluod ID or dropbox URL
 // $audio_format: string: "soundcloud" or "dropbox"
 // $other_file: a URL for another kind of file. Can be PDF, XLS, image, etc.
-// $file_type: set by partials/icon-file.php above
 // $image: a thumbnail image that represents the content.
 // $connect_video_id: the text ID of the connect video if it is one.
+// $title: a string: the title of the content item
+// $description: a string: the rich text description of the content item
+// $active_media: a string: 'video', 'audio', 'file', or 'text'
 
-if ($video_file != ''): ?>
+if ($active_media == 'video'): ?>
   <div class="content-description">
     <div class="content-title">
       <h4><?php echo $title; ?></h4>
@@ -50,7 +52,7 @@ if ($video_file != ''): ?>
       <iframe src="https://player.vimeo.com/video/NOT-A-VALID-VIDEO?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <?php endif; // end of video if statement ?>
   </div>
-<?php elseif ($audio_file != ''): ?>
+<?php elseif ($active_media == 'audio'): ?>
   <div class="content-description">
     <div class="content-title">
       <h4><?php echo $title; ?></h4>
@@ -75,7 +77,7 @@ if ($video_file != ''): ?>
     </div>
   <?php endif; // end soundcloud ?>
 
-<?php elseif ($other_file != ''):
+<?php elseif ($active_media == 'file'):
   $file_parts = pathinfo($other_file);
   switch($file_parts['extension']) {
     case "pdf":
@@ -131,7 +133,7 @@ if ($video_file != ''): ?>
       </div>
     <?php
   } // end switch
-else: // no file was given ?>
+else: // $active_media == 'text' ?>
   <div class="content-description">
     <div class="content-title">
       <h4><?php echo $title; ?></h4>

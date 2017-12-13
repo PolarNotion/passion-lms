@@ -34,24 +34,19 @@
 
           <div class="col-sm-4">
           <?php
-          	$title       	= get_sub_field('title');
-						$title_color 	= get_sub_field('title_color');
-						$btn_color 		= 'card__title--' . $title_color;
-						$title_img		= get_sub_field('title_image');
-					  $image     = get_sub_field('image');
-						$description 	= get_sub_field('description');
-					  $video_file  	= get_sub_field('video_file');
-					  $other_file  	= get_sub_field('other_file');
-						$audio_file		= get_sub_field('audio_file');
-						$date_posted	= get_sub_field('date_posted');
-						$one_month_ago = date_create('-30 days');
+          	$title       		= get_sub_field('title');
+						$title_color 		= get_sub_field('title_color');
+						$btn_color 			= 'card__title--' . $title_color;
+						$title_img			= get_sub_field('title_image');
+					  $image     			= get_sub_field('image');
+						$description 		= get_sub_field('description');
+						$date_posted		= get_sub_field('date_posted');
+						$one_month_ago	= date_create('-30 days');
 
-						// This include sets $file_icon to the right icon file, and $file_type for use later by partials/embed-content.php
-						$video_file = $video_file;
-						$audio_file = $audio_file;
-						$other_file = $other_file;
-						$file_icon = '';
-						$file_type = '';
+						// This include sets $file_icon to the right icon file
+						$active_media = get_sub_field('active_media');
+						$other_file  	= get_sub_field('other_file');
+						$file_icon 		= '';
 						include 'partials/file-icon.php';
           ?>
 						<a href="#" class="a-wrapper" data-toggle="modal" data-target="#modal_<?php echo $row_id; ?>_<?php echo $modal_id; ?>">
@@ -75,12 +70,11 @@
                   <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 										<?php
-											$video_file 			= $video_file;
+											$video_file  			= get_sub_field('video_file');
 											$video_format 		= get_sub_field('video_format');
-											$audio_file 			= $audio_file;
+											$audio_file				= get_sub_field('audio_file');
 											$audio_format 		= get_sub_field('audio_format');
 											$other_file 			= $other_file;
-											$file_type				= $file_type; // set by partials/icon-file.php above
 											$image						= $image;
 											$connect_video_id = get_sub_field('connect_video_id');
 											include 'partials/embed-content.php';

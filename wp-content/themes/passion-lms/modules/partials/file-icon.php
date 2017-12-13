@@ -1,37 +1,31 @@
 <?php
-// Set the $file_icon based on the input files ($video_file, $audio_file & $other_file)
-if ($video_file != ''):
+// Set the $file_icon based on the active media type
+// active_media: will be 'video', 'audio', 'file' or 'text'
+if ( $active_media == 'video' ):
   $file_icon = "fa-play";
-  $file_type = 'video';
-elseif( $audio_file != ''):
+elseif( $active_media == 'audio' ):
   $file_icon = "fa-file-audio-o";
-  $file_type = 'audio';
-elseif($other_file != ''):
+elseif( $active_media == 'file' ):
   $file_parts = pathinfo($other_file);
   switch($file_parts['extension']) {
     case "pdf":
       $file_icon = "fa-file-text-o";
-      $file_type = 'pdf';
       break;
 
     case "jpg":
     case "png":
     case "gif":
       $file_icon = "fa-file-image-o";
-      $file_type = 'img';
       break;
 
     default:
       $file_icon = "fa-file-text-o";
-      $file_type = 'unknown';
   }
-else:
+else: // $active_media == 'text'
   $file_icon = '';
-  $file_type = 'error';
 endif;
 
 // RESULT: $file_icon is set properly
 $file_icon = $file_icon;
-$file_type = $file_type;
 
 ?>
