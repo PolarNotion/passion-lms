@@ -172,7 +172,7 @@
 
         // Haivision Video
         else if ($this.attr('src').indexOf("theplatform") > -1) {
-          var mediaId = $this.attr('data-media-id');
+          var mediaId = $this.attr('data-haivision-id');
           var checkpoints = [];
           var latestCompletion = 0;
           window.addEventListener(mediaId + 'Loaded', function() {

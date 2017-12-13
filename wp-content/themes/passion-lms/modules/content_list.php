@@ -87,12 +87,13 @@
           ?>
             <div id="item_<?php echo $row_id . '_' . $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
               <?php
-                $video_file = $video_file;
-								$video_format = get_sub_field('video_format');
-								$audio_file 	= $audio_file;
-								$audio_format = get_sub_field('audio_format');
-                $other_file = $other_file;
-                $file_type	= $file_type; // set by partials/icon-file.php above
+                $video_file 			= $video_file;
+								$video_format 		= get_sub_field('video_format');
+								$audio_file 			= $audio_file;
+								$audio_format 		= get_sub_field('audio_format');
+                $other_file 			= $other_file;
+                $file_type				= $file_type; // set by partials/icon-file.php above
+								$connect_video_id = get_sub_field('connect_video_id');
                 include 'partials/embed-content.php';
               ?>
             </div>

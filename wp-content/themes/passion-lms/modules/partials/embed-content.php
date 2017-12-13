@@ -7,6 +7,7 @@
 // $other_file: a URL for another kind of file. Can be PDF, XLS, image, etc.
 // $file_type: set by partials/icon-file.php above
 // $image: a thumbnail image that represents the content.
+// $connect_video_id: the text ID of the connect video if it is one.
 
 if ($video_file != ''): ?>
   <div class="content-description">
@@ -20,13 +21,13 @@ if ($video_file != ''): ?>
       <iframe
         id="youtube-<?php echo $video_file; ?>"
         class="embed-responsive-item trackable-video"
-        data-media-id="<?php echo $video_file; ?>"
+        data-media-id="<?php echo $connect_video_id; ?>"
         src="https://www.youtube.com/embed/<?php echo $video_file; ?>?rel=0&amp;showinfo=0&amp;modestbranding=0&amp;color=white&amp;enablejsapi=1" allowfullscreen></iframe>
     <?php elseif ($video_format == 'vimeo'): ?>
       <iframe
         id="vimeo-<?php echo $video_file; ?>"
         class="trackable-video"
-        data-media-id="<?php echo $video_file; ?>"
+        data-media-id="<?php echo $connect_video_id; ?>"
         src="https://player.vimeo.com/video/<?php echo $video_file; ?>?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" width="640" height="360"
         frameborder="0"
         webkitallowfullscreen
@@ -36,7 +37,7 @@ if ($video_file != ''): ?>
       <iframe
         id="haivision-<?php echo $video_file; ?>"
         class="trackable-video"
-        data-media-id="<?php echo $video_file; ?>"
+        data-media-id="<?php echo $connect_video_id; ?>"
         data-haivision-id="<?php echo $video_file; ?>"
         width="500"
         height="300"
