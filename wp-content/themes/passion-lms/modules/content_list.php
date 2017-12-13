@@ -28,18 +28,14 @@
             while(the_repeater_field('content_items')):
             	$title       = get_sub_field('title');
   					  $image       = get_sub_field('image');
-              $video_file  = get_sub_field('video_file');
-							$audio_file	 = get_sub_field('audio_file');
-              $other_file  = get_sub_field('other_file');
 							$date_posted	= get_sub_field('date_posted');
 							$one_month_ago = date_create('-30 days');
 
               // This include sets $file_icon to the right icon file
-  						$video_file = $video_file;
-  						$audio_file = $audio_file;
-  						$other_file = $other_file;
-  						$file_icon = '';
-  						include 'partials/file-icon.php';
+							$active_media = get_sub_field('active_media');
+							$other_file  	= get_sub_field('other_file');
+							$file_icon 		= '';
+							include 'partials/file-icon.php';
 
               $item_no += 1;
               $active_class = '';
@@ -76,8 +72,6 @@
           	$title       = get_sub_field('title');
 					  $image       = get_sub_field('image');
 						$description = get_sub_field('description');
-					  $video_file  = get_sub_field('video_file');
-						$audio_file	 = get_sub_field('audio_file');
 					  $other_file  = get_sub_field('other_file');
             $item_no += 1;
             $active_class = '';
@@ -87,12 +81,13 @@
           ?>
             <div id="item_<?php echo $row_id . '_' . $item_no; ?>" class="tab-pane <?php echo $active_class; ?>">
               <?php
-                $video_file = $video_file;
-								$video_format = get_sub_field('video_format');
-								$audio_file 	= $audio_file;
-								$audio_format = get_sub_field('audio_format');
-                $other_file = $other_file;
-                $file_type	= $file_type; // set by partials/icon-file.php above
+                $video_file  			= get_sub_field('video_file');
+								$video_format 		= get_sub_field('video_format');
+								$audio_file 			= $audio_file;
+								$audio_format 		= get_sub_field('audio_format');
+                $other_file 			= $other_file;
+								$connect_video_id = get_sub_field('connect_video_id');
+								$active_media			= get_sub_field('active_media');
                 include 'partials/embed-content.php';
               ?>
             </div>
