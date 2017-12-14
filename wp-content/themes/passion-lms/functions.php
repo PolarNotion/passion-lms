@@ -318,6 +318,7 @@ function start_session() {
   if(!session_id()) {
     session_start();
   }
+	setcookie("wordpress_nocache", 'no-cache'); // IMPORTANT! Disables caching on wpengine. See: https://wpengine.com/support/wpengine-ecommerce/
 }
 
 function end_session() {
