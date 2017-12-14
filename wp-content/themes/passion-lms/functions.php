@@ -250,6 +250,14 @@ add_action('wp_logout', 'end_session');
 add_action('wp_login', 'end_session');
 add_action('end_session_action', 'end_session');
 
+// Used in check_connect_auth
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  return $url;
+}
+
 // The first step of Connect Auth
 function check_connect_auth() {
 	ob_clean();
@@ -260,12 +268,15 @@ function check_connect_auth() {
 
 	$connect_user_id 						= $_SESSION['connect_user_id'];
 	$connect_user_permissions 	= $_SESSION['connect_user_permissions'];
+	$request_uri = $_SERVER['REQUEST_URI'];
+	//$request_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER[HTTP_HOST] . $request_uri;
+	$request_link = getUrl();
 
-	if (strrpos($_SERVER['REQUEST_URI'], "wp-admin") !== false || strrpos($_SERVER['REQUEST_URI'], "wp-login") !== false): // Admins don't need to login the traditional way
+	if (strrpos($request_uri, "wp-admin") !== false || strrpos($request_uri, "wp-login") !== false): // Admins don't need to login the traditional way
 		return;
 	endif;
 
-	if ($_SERVER['REQUEST_METHOD'] === "GET" && strrpos($_SERVER['REQUEST_URI'], "/connect-auth") !== false ):
+	if ($_SERVER['REQUEST_METHOD'] === "GET" && strrpos($request_uri, "/connect-auth") !== false ):
 		// Set user
 		$connect_user_id = $_GET['person_id'];
 		$_SESSION['connect_user_id'] = $connect_user_id;
@@ -309,6 +320,8 @@ function check_connect_auth() {
 		return;
 	else:
 		$lockout_url = get_field('lockout_url', 'option');
+		$redirect_part = (strrpos($lockout_url, "?") !== false) ? "&redirect=" : "?redirect=";
+		$lockout_url = $lockout_url . $redirect_part . $request_link;
 		wp_redirect($lockout_url);
 		exit(); // Redirect to Connect
 	endif;
