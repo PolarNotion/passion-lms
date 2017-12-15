@@ -6,9 +6,6 @@
  *
  * @package Passion_LMS
  */
-global $header_bg_backup, $title_image_backup;
-$header_bg_backup 	= get_template_directory_uri() . "/img/default_header_bg.jpg";
-$title_image_backup = get_template_directory_uri() . "/img/default_title_image.png";
 $current_team      = get_current_team_wpid();
 $url_team          = $_GET['tid'];
 

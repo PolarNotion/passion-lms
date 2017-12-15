@@ -9,19 +9,25 @@
  * @package Passion_LMS
  */
 
-$page_title 			= get_the_title();
-$header_bg_image 	= get_field('header_bg_image');
-$title_image 			= get_field('title_image');
-$title_text				= get_field('title_text');
+$current_team = get_current_team_wpid();
 
-if($header_bg_image == ''):
-	global $header_bg_backup;
-	$header_bg_image 	= $header_bg_backup;
-endif;
+if( $current_team !== 'EVERYONE' && is_numeric($current_team) ):
+	// Grab the background-image and title-image of the current team
+	$args = array(
+		'p'	=> $current_team,
+		'post_type'   => 'teams',
+	);
 
-if($title_image == '' && $title_text == ''):
-	global $title_image_backup;
-	$title_image 			= $title_image_backup;
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		$header_bg_image 	= get_field('header_bg_image');
+		$title_image 			= get_field('title_image');
+		$title_text				= get_field('title_text');
+	endwhile;
+	wp_reset_postdata(); // this is necessary in order to run another query in another module on the same page
+else:
+	$header_bg_image	= get_field('header_bg_backup', 'option');
+  $title_image 			= get_field('header_title_image_backup', 'option');
 endif;
 
 ?><!doctype html>

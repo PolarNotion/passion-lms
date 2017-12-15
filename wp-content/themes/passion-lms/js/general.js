@@ -49,6 +49,7 @@ $('.hide-list').click(function(){
   $('.fa-chevron-circle-left', parentModule).toggleClass('switch-chevron');
   if ( $(window).width() > 767 ) {
     $('.content-pane-wrapper', parentModule).toggleClass('full-width');
+    $('.content-list-module-wrapper', parentModule).toggleClass('full-width');
   }
 });
 

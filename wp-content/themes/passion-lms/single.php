@@ -9,15 +9,8 @@
 $post_team_doors 		= get_field('view_access');
 
 if (pn_user_has_post_access($post_team_doors)):
-	global $header_bg_backup, $title_image_backup;
-	$header_bg_backup 	= get_template_directory_uri() . "/img/default_header_bg.jpg";
-	$title_image_backup = get_template_directory_uri() . "/img/default_title_image.png";
-
+	
 get_header();
-// echo "Valid Teams: ";
-// print_r($_SESSION['user_team_keys']);
-// echo "Access Doors: ";
-// print_r($post_team_doors);
 ?>
 
 	<div id="primary" class="content-area">
