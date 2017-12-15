@@ -43,7 +43,7 @@ if ($active_media == 'video'): ?>
         data-haivision-id="<?php echo $video_file; ?>"
         width="500"
         height="300"
-        src="http://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html"
+        src="https://player.theplatform.com/p/IfSiAC/zRWLH3MHyzaX/embed/select/media/<?php echo $video_file; ?>?form=html"
         seamless="seamless"
         allowfullscreen
         onload="window.player<?php echo $video_file; ?> = $pdk.bind(this, false); $pdk.controller.setIFrame(this, true); window.dispatchEvent(new CustomEvent('<?php echo $video_file; ?>Loaded'))"></iframe>
