@@ -62,37 +62,53 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   }
 });
 
-// Reset or Pause a video/audio when another content list item is clicked.
-$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-  hiddenTabID = $(e.target).data('target');
-  $iframe = $(hiddenTabID).find('iframe');
-  // console.log(e.relatedTarget);
-  // Reset YouTube and Vimeo videos:
-  $iframe.attr("src", $iframe.attr("src"));
+function pauseAllVideos() {
+  $('iframe').each(function () {
+    $this = $(this)
+    if ($this.data('haivision-id')) {
+      haivisionId = $this.data('haivision-id');
+      return window["player" + haivisionId].pause(true);
+    }
+    $this.attr("src", $this.attr("src"));    
+  })
+}
 
-  // Pause Haivision videos:
-  haivisionId = $iframe.data('haivision-id');
-  if (haivisionId) {
-    window["player" + haivisionId].pause(true);
-  }
-
-  // Reset dropbox audio
+function pauseAllAudio () {
   $('audio').each(function(){
-      this.pause(); // Stop playing
-      this.currentTime = 0; // Reset time
+    this.pause(); // Stop playing
+    this.currentTime = 0; // Reset time
   });
-});
+}
+
+function pauseAllMedia () {
+  pauseAllAudio();
+  pauseAllVideos();
+}
+
+//This will stop all videos
+function pauseClosestMedia(context) {
+  $iframe = $(context).find( "iframe" );
+  $iframe.attr("src", $iframe.attr("src"));
+  // For Haivision
+  haivisionId = $iframe.data('haivision-id');
+  if (haivisionId) { window["player" + haivisionId].pause(true); }
+  // For dropbox audio
+  $('audio').each(function(){
+    this.pause(); // Stop playing
+    this.currentTime = 0; // Reset time
+  });
+}
 
 // Stop a video when the modal closes
-$(".modal").on('hidden.bs.modal', function(e) {
-    $iframe = $(this).find( "iframe" );
-    $iframe.attr("src", $iframe.attr("src"));
-    // For Haivision
-    haivisionId = $iframe.data('haivision-id');
-    if (haivisionId) { window["player" + haivisionId].pause(true); }
-    // For dropbox audio
-    $('audio').each(function(){
-        this.pause(); // Stop playing
-        this.currentTime = 0; // Reset time
-    });
+$(".modal").on('hide.bs.modal', function(e) {
+  pauseClosestMedia(this);
+});
+
+$('.modal').on('show.bs.modal', function (e) {
+  pauseAllMedia();
+})
+
+// Reset or Pause a video/audio when another content list item is clicked.
+$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+  pauseAllMedia();
 });
